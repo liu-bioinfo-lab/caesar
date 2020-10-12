@@ -53,7 +53,8 @@ def train_and_evaluate(args, epigenetic_data):
         print('Epoch', i, ':')
         t1 = time.time()
         for (epi, hics), micros in generate_batches(cell_lines, chromosomes, resolutions, epi_names,
-                                                    epigenetic_data, args.batch_size, args.inp_window):
+                                                    epigenetic_data, args.batch_size, args.inp_window,
+                                                    args.hic_path, args.micro_path):
             t2 = time.time()
             print(' - Loading data:', t2 - t1, 's')
             model.train_on_batch([hics, epi], micros)

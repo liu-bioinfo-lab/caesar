@@ -1,7 +1,4 @@
-from io import BytesIO
 import numpy as np
-from tensorflow.python.lib.io import file_io
-from scipy.stats import zscore
 from scipy.signal import convolve2d
 
 
@@ -25,38 +22,8 @@ MOUSE_CHR_SIZES = {'chr1': (3000000, 195300000), 'chr2': (3100000, 182000000), '
 chromosome_sizes = {'hESC': HUMAN_CHR_SIZES, 'mESC': MOUSE_CHR_SIZES, 'HFF': HUMAN_CHR_SIZES}
 
 
-def load_npy(src, bucket='gs://micro_c_training_data/'):
-    # Loading numpy in Google Cloud Storage
-    f = BytesIO(file_io.read_file_to_string(bucket + src, binary_mode=True))
-    arr = np.load(f)
-    return arr
-
-
-def load_epigenetic_data(cell_lines, chromosomes, epi_names, verbose=1):
-    epigenetic_data = {}
-    res = 200
-
-    for cell_line in cell_lines:
-        epi_data = {}
-        for ch in chromosomes:
-            epi_data[ch] = None
-            for i, k in enumerate(epi_names):
-                path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data'
-                src = '{0}/Epi/{1}/{2}/{3}_{4}bp_{5}.npy'.format(path, cell_line, ch, ch, res, k)
-                # s = load_npy(src)
-                s = np.load(src)
-                # print(ch, k, s.shape)
-                s = zscore(s)
-                if verbose:
-                    print(ch, k, len(s))
-                if i == 0:
-                    epi_data[ch] = np.zeros((len(s), len(epi_names)))
-                epi_data[ch][:, i] = s
-        epigenetic_data[cell_line] = epi_data
-    return epigenetic_data
-
-
-def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic_data, batch_size, inp_window):
+def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic_data, batch_size, inp_window,
+                     hic_path, micro_path):
     idx2pos = {}
     pointer = 0
 
@@ -93,26 +60,14 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
         epi = np.zeros((batch_size, nBins + inp_window - 1, len(epi_names)))
         micros = np.zeros((batch_size, nBins, nBins))
         hics = np.zeros((batch_size, nBins, nBins))
-        path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data'
 
         for i, idx in enumerate(batch_ids):
             ch, pos, res, cell_line = idx2pos[idx]
             epi[i, :, :] = epigenetic_data[cell_line][ch][pos // 200 - (inp_window // 2): pos // 200 + 1250 + (inp_window // 2), :]
-            # micros[i, :, :] = convolve2d(load_npy(
-            #     'MicroC/{0}/processed/{1}/{2}_200bp_{3}_{4}.npy'.format(
-            #         cell_line, ch, ch, pos, pos + max_distance)), np.ones((3, 3)) / 9, mode='same')
-            # if cell_line != 'mESC':
-            #     hics[i, :, :] = load_npy(
-            #         'HiC/{0}/processed/{1}/{2}_{3}bp_{4}_{5}.npy'.format(
-            #             cell_line, ch, ch, res, pos, pos + max_distance)) * mouse2human
-            # else:
-            #     hics[i, :, :] = load_npy(
-            #         'HiC/{0}/processed/{1}/{2}_{3}bp_{4}_{5}.npy'.format(
-            #             'mix', ch, ch, res, pos, pos + max_distance))
             micros[i, :, :] = convolve2d(np.load(
-                f'{path}/MicroC/{cell_line}/{ch}/{ch}_200bp_{pos}_{pos + max_distance}.npy'),
+                f'{micro_path}/{cell_line}/{ch}/{ch}_200bp_{pos}_{pos + max_distance}.npy'),
                 np.ones((3, 3)) / 9, mode='same')
-            hics[i, :, :] = np.load(f'{path}/HiC/mix/{ch}/{ch}_{res}bp_{pos}_{pos + max_distance}.npy')
+            hics[i, :, :] = np.load(f'{hic_path}/{cell_line}/{ch}/{ch}_{res}bp_{pos}_{pos + max_distance}.npy')
 
         yield (epi, hics), micros
 
