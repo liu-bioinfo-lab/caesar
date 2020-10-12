@@ -129,24 +129,40 @@ def contact_maps_from_processed_files(ch, chrom_files, reference,
         np.save(fname, np.log(m + 1))
 
 
-def process_hics():
+def process_hics(type='HFF', input_dirs=['../raw_data/'], output_dir='../processed_data/',
+                 resolution=1000):
+    if type == 'mESC':
+        sizes = MOUSE_CHR_SIZES
+        rg = 'mm10'
+    elif type == 'hESC':
+        sizes = HUMAN_CHR_SIZES
+        rg = 'hg38'
+    elif type == 'HFF':
+        sizes = HUMAN_CHR_SIZES
+        rg = 'hg38'
+    else:
+        raise ValueError
+
     chrom_lengths = load_chrom_sizes('hg38')
     del chrom_lengths['chrY']
 
-    output_dir = '../processed_data/'
-    resolution = 1000
     for ch in chrom_lengths.keys():
         chrom_files = [
-            f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/H1-hESC/processed/{ch}_1kb.txt',
-            f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/K562/processed/{ch}_1kb.txt',
-            f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/HFF/processed/{ch}_1kb.txt',
-            f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/GM12878/processed/{ch}_1kb.txt'
-            f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/IMR90/processed/{ch}_1kb.txt'
+            f'{elm}/{ch}.txt' for elm in input_dirs
         ]
 
-        contact_maps_from_processed_files(ch, chrom_files, 'hg38', HUMAN_CHR_SIZES, resolution, output_dir)
+        contact_maps_from_processed_files(ch, chrom_files, rg, sizes, resolution, output_dir)
 
 
 if __name__ == '__main__':
-    process_hics()
+    input_dirs = [
+        f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/H1-hESC/processed/',
+        f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/K562/processed/',
+        f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/HFF/processed/',
+        f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/GM12878/processed/'
+        f'/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/IMR90/processed/'
+    ]
+    output_dir = '../processed_data/HiC/'
+
+    process_hics(type='HFF', input_dirs=input_dirs, output_dir=output_dir)
 

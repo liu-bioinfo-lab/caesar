@@ -1,10 +1,5 @@
-from io import BytesIO
 import numpy as np
-# from tensorflow.python.lib.io import file_io
-from scipy.stats import zscore
 from scipy.signal import convolve2d
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 
 HUMAN_CHR_SIZES = {'chr1': (100000, 248900000), 'chr2': (100000, 242100000), 'chr3': (100000, 198200000),
@@ -27,30 +22,6 @@ MOUSE_CHR_SIZES = {'chr1': (3000000, 195300000), 'chr2': (3100000, 182000000), '
 chromosome_sizes = {'hESC': HUMAN_CHR_SIZES, 'mESC': MOUSE_CHR_SIZES, 'HFF': HUMAN_CHR_SIZES}
 
 
-def load_epigenetic_data(cell_lines, chromosomes, epi_names, verbose=1):
-    epigenetic_data = {}
-    res = 200
-
-    for cell_line in cell_lines:
-        epi_data = {}
-        for ch in chromosomes:
-            epi_data[ch] = None
-            for i, k in enumerate(epi_names):
-                path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data'
-                src = '{0}/Epi/{1}/{2}/{3}_{4}bp_{5}.npy'.format(path, cell_line, ch, ch, res, k)
-                # s = load_npy(src)
-                s = np.load(src)
-                # print(ch, k, s.shape)
-                s = zscore(s)
-                if verbose:
-                    print(ch, k, len(s))
-                if i == 0:
-                    epi_data[ch] = np.zeros((len(s), len(epi_names)))
-                epi_data[ch][:, i] = s
-        epigenetic_data[cell_line] = epi_data
-    return epigenetic_data
-
-
 def filter_30():
     mat = np.zeros((35, 35))
     for t in range(16):
@@ -65,7 +36,8 @@ def filter_55():
     return mat
 
 
-def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic_data, batch_size, inp_window):
+def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic_data, batch_size, inp_window,
+                     hic_path, micro_path):
     idx2pos = {}
     pointer = 0
 
@@ -93,7 +65,7 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
     print(n_batches)
     filter_m = {35: filter_30(), 55: filter_55()}
 
-    f1, f2 = open('merged_loops_1kb.bedpe'), open('merged_loops_5kb.bedpe')
+    f1, f2 = open('loops_1kb.bedpe'), open('loops_5kb.bedpe')
     loops = {}
     for line in f1:
         if not line.startswith('#'):
@@ -131,7 +103,6 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
         hics = np.zeros((batch_size, nBins, nBins))
         mask = np.zeros((batch_size, nBins, nBins))
         micros = np.zeros((batch_size, nBins, nBins))
-        path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data'
 
         for i, idx in enumerate(batch_ids):
             ch, pos, res, cell_line = idx2pos[idx]
@@ -139,7 +110,7 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
 
             mask[i, :, :] = msk
             epis[i, :, :] = epigenetic_data[cell_line][ch][pos // 200 - (inp_window // 2): pos // 200 + 1250 + (inp_window // 2), :]
-            hics[i, :, :] = np.load(f'{path}/HiC/mix/{ch}/{ch}_{res}bp_{pos}_{pos + max_distance}.npy')
+            hics[i, :, :] = np.load(f'{hic_path}/{cell_line}/{ch}/{ch}_{res}bp_{pos}_{pos + max_distance}.npy')
 
             found_loops = []
             for loop in loops[ch]:
@@ -164,7 +135,7 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
             else:
                 # print(i, True)
                 mat = convolve2d(np.load(
-                    f'{path}/MicroC/{cell_line}/{ch}/{ch}_200bp_{pos}_{pos + max_distance}.npy'),
+                    f'{micro_path}/{cell_line}/{ch}/{ch}_200bp_{pos}_{pos + max_distance}.npy'),
                     np.ones((3, 3)) / 9, mode='same')
                 for x1, x2, y1, y2 in found_loops:
                     # print(x1, x2, y1, y2)
@@ -173,9 +144,4 @@ def generate_batches(cell_lines, chromosomes, resolutions, epi_names, epigenetic
             micros[i, :, :] = new_mat
 
         yield (hics, epis, mask), micros
-
-
-if __name__ == '__main__':
-    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me2', 'H3K4me3',
-                 'H3K27ac', 'H3K27me3']
 

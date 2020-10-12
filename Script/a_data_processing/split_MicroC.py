@@ -95,7 +95,7 @@ def contact_maps_from_a_processed_file(ch, chrom_file, reference,
         np.save(fname, np.log(m + 1))
 
 
-def process_data(type='mESC', input_dir='../raw_data/', output_dir='../processed_data/'):
+def process_MicroC(type='mESC', input_dir='../raw_data/', output_dir='../processed_data/'):
     if type == 'mESC':
         sizes = MOUSE_CHR_SIZES
         rg = 'mm10'
@@ -112,10 +112,14 @@ def process_data(type='mESC', input_dir='../raw_data/', output_dir='../processed
     del chroms['chrY']
 
     for ch in chroms.keys():
+        if not os.path.exists(f'{output_dir}/{ch}'):
+            os.mkdir(f'{output_dir}/{ch}')
         file_path = os.path.join(input_dir, f'{ch}.txt')
         contact_maps_from_a_processed_file(ch, file_path, rg, True, sizes, output_dir, type)
 
 
 if __name__ == '__main__':
-    cell_type, input_dir, output_dir = sys.argv[1], sys.argv[2], sys.argv[3]
-    process_data(cell_type, input_dir, output_dir)
+    cell_type = 'HFF'
+    input_dir = '../raw_data/HFF/'
+    output_dir = '../processed_data/HFF'
+    process_MicroC(cell_type, input_dir, output_dir)

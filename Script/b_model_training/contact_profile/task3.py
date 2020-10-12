@@ -5,11 +5,39 @@ import numpy as np
 from os import path
 from scipy.stats import zscore
 from model import model_fn
-from utils2 import chromosome_sizes, load_epigenetic_data, generate_batches
+from utils2 import chromosome_sizes, generate_batches
 
 
-def train_and_evaluate(args):
-    # Build model
+def load_epigenetic_data(epi_path, cell_lines, chromosomes, epi_names, verbose=1):
+    epigenetic_data = {}
+    res = 200
+    for cell_line in cell_lines:
+        epi_data = {}
+        for ch in chromosomes:
+            epi_data[ch] = None
+            for i, k in enumerate(epi_names):
+                src = '{0}/{1}/{2}/{3}_{4}bp_{5}.npy'.format(epi_path, cell_line, ch, ch, res, k)
+                s = np.load(src)
+                s = zscore(s)
+                if verbose:
+                    print(ch, k, len(s))
+                if i == 0:
+                    epi_data[ch] = np.zeros((len(s), len(epi_names)))
+                epi_data[ch][:, i] = s
+        epigenetic_data[cell_line] = epi_data
+    return epigenetic_data
+
+
+def train_and_evaluate(args, epigenetic_data):
+    # Load chromosomes
+    cell_lines = [elm.strip() for elm in args.cell_line.split(',')]
+    st_ed_pos = chromosome_sizes[cell_lines[0]]
+    chromosomes = ['chr' + elm for elm in args.chrs.split(',')] if args.chrs.lower() != 'all' else st_ed_pos.keys()
+    # Load resolutions
+    epi_names = [elm.strip() for elm in args.features.split(',')]
+    resolutions = [int(elm) for elm in args.inp_resolutions.split(',')]
+
+    # Build current model
     model = model_fn(
         first_layer=[args.inp_kernel, args.inp_window],
         gcn_layers=[args.n_GC_units] * args.n_GC_layers,
@@ -17,29 +45,11 @@ def train_and_evaluate(args):
         conv_layer_windows=[int(k) for k in args.conv_windows.split(',')],
         nBins=1250,
         lr=args.lr,
-        nMarks=args.n_marks,
+        nMarks=len(epi_names),
         verbose=1
     )
 
-    j = 0
-    while path.exists('temp_model_{0}.h5'.format(j)):
-        j += 1
-
-    if j != 0:
-        model.load_weights('temp_model_{0}.h5'.format(j - 1))
-
-    # Load chromosomes
-    cell_lines = [elm.strip() for elm in args.cell_line.split(',')]
-    st_ed_pos = chromosome_sizes[cell_lines[0]]
-    chromosomes = ['chr' + elm for elm in args.chrs.split(',')] if args.chrs.lower() != 'all' else st_ed_pos.keys()
-
-    # Load resolutions
-    resolutions = [int(elm) for elm in args.inp_resolutions.split(',')]
-    # Load epigenetic data
-    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3', 'H3K9me3']
-    epigenetic_data = load_epigenetic_data(cell_lines, chromosomes, epi_names)
-
-    for i in range(j, args.epochs):
+    for i in range(args.epochs):
         print('Epoch', i, ':')
         t1 = time.time()
         for (epi, hics), micros in generate_batches(cell_lines, chromosomes, resolutions, epi_names,
@@ -140,11 +150,34 @@ if __name__ == '__main__':
         help='how frequent to save model'
     )
     parser.add_argument(
-        '--n_marks',
-        type=int,
-        default=7,
-        help='number of epigenetic marks'
+        '--features',
+        type=str,
+        default='ATAC_seq,CTCF,H3K4me1,H3K4me3,H3K27ac,H3K27me3',
+        help='comma-separated epigenomic marks'
+    )
+    parser.add_argument(
+        '--epi_path',
+        type=str,
+        help='comma-separated epigenomic marks'
+    )
+    parser.add_argument(
+        '--hic_path',
+        type=str,
+        help='comma-separated epigenomic marks'
+    )
+    parser.add_argument(
+        '--micro_path',
+        type=str,
+        help='comma-separated epigenomic marks'
     )
     args, _ = parser.parse_known_args()
-    train_and_evaluate(args)
+
+    # Load epigenetic data
+    cell_lines = [elm.strip() for elm in args.cell_line.split(',')]
+    st_ed_pos = chromosome_sizes[cell_lines[0]]
+    chromosomes = ['chr' + elm for elm in args.chrs.split(',')] if args.chrs.lower() != 'all' else st_ed_pos.keys()
+    epi_names = [elm.strip() for elm in args.features.split(',')]
+    epigenetic_data = load_epigenetic_data(args.epi_path, cell_lines, chromosomes, epi_names)
+
+    train_and_evaluate(args, epigenetic_data)
 

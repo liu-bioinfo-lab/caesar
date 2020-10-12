@@ -63,32 +63,34 @@ def load_bedGraph_for_one_region(path, chromosome, start_pos, end_pos, resolutio
     return epi_signal
 
 
+def process_epi(file, cell_line, epi_name, output_dir):
+    resolution = 200
+    if type == 'mESC':
+        rg = 'mm10'
+    else:
+        rg = 'hg38'
+    chrom_sizes = load_chrom_sizes(rg)
+    chroms = load_chrom_sizes(rg)
+    del chroms['chrY']
+
+    for ch in chroms.keys():
+        if not os.path.exists(f'{output_dir}/{ch}'):
+            os.mkdir(f'{output_dir}/{ch}')
+        if file.lower().endswith('bigwig'):
+            load_bigwig_for_one_region(
+                file,
+                ch, 0, chrom_sizes[ch],
+                resolution=resolution,
+                output_path=f'{output_dir}/{cell_line}_{epi_name}_{resolution}bp.npy')
+        elif file.lower().endswith('bedgraph'):
+            load_bedGraph_for_one_region(
+                file,
+                ch, 0, chrom_sizes[ch],
+                resolution=resolution,
+                output_path=f'{output_dir}/{cell_line}_{epi_name}_{resolution}bp.npy')
+
+
 if __name__ == "__main__":
-    reference_genome = 'hg38'
-    chrom_sizes = load_chrom_sizes(reference_genome)
-    ch = 'chr1'
-
-    load_bedGraph_for_one_region(
-        '../raw_data/epi/IMR90_ATAC_seq_hg38.bedGraph',
-        ch, 0, chrom_sizes[ch],
-        resolution=200,
-        output_path='../processed_data/epi/IMR90_chr1_ATAC_seq_200bp.npy')
-
-    load_bigwig_for_one_region(
-        '../raw_data/epi/IMR90_CTCF_hg38.bigWig',
-        ch, 0, chrom_sizes[ch],
-        resolution=200,
-        output_path='../processed_data/epi/IMR90_CTCF_200bp.npy')
-
-    # epigenetic_features = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3',
-    #                        'H3K9ac', 'H3K27ac', 'H3K27me3', 'H3K36me3']
-    # path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/Epigenomic_Data/IMR90'
-    # for epi in epigenetic_features:
-    #     print(epi)
-    #     if epi == 'ATAC_seq':
-    #         load_bedGraph_for_one_region('{0}/IMR90_{1}_hg38.bedGraph'.format(path, epi), 'chr1', 0, 248956000, resolution=200,
-    #                                      output_path='epi/IMR90_chr1_{0}_200bp.npy'.format(epi))
-    #     else:
-    #         load_bigwig_for_one_region('{0}/IMR90_{1}_hg38.bigWig'.format(path, epi), 'chr1', 0, 248956000, resolution=200,
-    #                                    output_path='epi/IMR90_chr1_{0}_200bp.npy'.format(epi))
+    file = '../raw_data/epi/IMR90_ATAC_seq_hg38.bedGraph'
+    process_epi(file, 'IMR-90', 'ATAC_seq', '../processed_data/Epi/IMR90/')
 
