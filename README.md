@@ -68,7 +68,7 @@ that you are interested in.
 For example, after loading the processed Hi-C contact map and epugenomic features of HFF from ``/Model/sample_data/HFF/``,
 we can use ``/Model/impute_regions_with_processed_data.py`` to quickly impute the contact map in region chr2:70,100,000-70,350,000.
 The results will be visualized in ``/Model/outputs/chr2_70100000.png``:
-![GitHub Logo](/Model/outputs/chr2_70100000.png)
+![GitHub Logo](/Model/outputs/chr2_70100000_pred.png)
 
 
 
