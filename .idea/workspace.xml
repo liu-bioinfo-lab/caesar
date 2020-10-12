@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/New Text Document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/chr8_127600000_hic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/chr8_127600000_pred.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/chr8_127600000_pred_wrong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/impute_example_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/impute_regions_with_raw_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/merged_loops_1kb.bedpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/merged_loops_5kb.bedpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/contact_profile/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/utils2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/contact_profile/utils2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/quagga_stripe_caller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/quagga_stripe_caller.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,23 +23,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="132">
-                <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <first_editor relative-caret-position="683">
+                <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Model/impute_example_regions.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils/HFF_loops_test_set.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="335" lean-forward="true" selection-start-line="335" selection-end-line="335" />
+            <state relative-caret-position="-122654">
+              <caret line="3454" column="24" selection-start-line="3454" selection-start-column="8" selection-end-line="3454" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_raw_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="320" lean-forward="true" selection-start-line="320" selection-end-line="320" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils/quagga_stripe_caller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="170" column="51" lean-forward="true" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils/fast_call_loops.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_processed_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="209" column="59" selection-start-line="209" selection-start-column="59" selection-end-line="209" selection-end-column="59" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -68,29 +123,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/utils2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1867">
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/a_data_processing/split_epi_features.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -114,8 +146,12 @@
         <option value="$PROJECT_DIR$/Model/model_util.py" />
         <option value="$PROJECT_DIR$/Model/load_surrogate_exp.py" />
         <option value="$PROJECT_DIR$/Model/example_regions.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Model/impute_example_regions.py" />
+        <option value="$PROJECT_DIR$/Model/impute_regions_with_processed_data.py" />
+        <option value="$PROJECT_DIR$/Model/impute_regions_with_raw_data.py" />
+        <option value="$PROJECT_DIR$/Utils/quagga_stripe_caller.py" />
+        <option value="$PROJECT_DIR$/Utils/fast_call_loops.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -144,36 +180,12 @@
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Image" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
               <item name="Script" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="a_data_processing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
-              <item name="contact_profile" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,23 +358,63 @@
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="132">
-            <caret line="6" selection-start-line="6" selection-end-line="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Utils/all_test_set.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/impute_example_regions.py">
+    <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_processed_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="335" lean-forward="true" selection-start-line="335" selection-end-line="335" />
+        <state relative-caret-position="553">
+          <caret line="209" column="59" selection-start-line="209" selection-start-column="59" selection-end-line="209" selection-end-column="59" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_raw_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="320" lean-forward="true" selection-start-line="320" selection-end-line="320" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/quagga_stripe_caller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="170" column="51" lean-forward="true" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/HFF_loops_test_set.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122654">
+          <caret line="3454" column="24" selection-start-line="3454" selection-start-column="8" selection-end-line="3454" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/fast_call_loops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="683">
+            <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -25,12 +25,10 @@ Basic structure of the model:
     [Out 1, Out 2] ----Add----> Output (Must be symmetric matrices)
 
 """
-from keras.layers import Input, Concatenate, Permute, Conv1D, Add, BatchNormalization, Dot, Multiply
+from keras.layers import Input, Concatenate, Permute, Conv1D, Add, BatchNormalization
 from keras.models import Model
 from keras.optimizers import Adam
-from keras import backend as K
 from layers import GraphConv
-import numpy as np
 
 
 def model_fn(first_layer=[64, 15], gcn_layers=[96, 96, 96],
@@ -84,40 +82,4 @@ def model_fn(first_layer=[64, 15], gcn_layers=[96, 96, 96],
         m.summary()
     return m
 
-
-def model_loop(first_layer=[96, 3], gcn_layers=[96, 96],
-               conv_layer_filters=[96], conv_layer_windows=[3],
-               nBins=1250, nMarks=6, lr=0.0001, verbose=1):
-    hic = Input(shape=(nBins, nBins))
-    epi_data = Input(shape=(nBins + first_layer[1] - 1, nMarks))
-    mask = Input(shape=(nBins, nBins))
-
-    hidden_0 = Conv1D(first_layer[0], first_layer[1], activation='relu')(epi_data)
-
-    if len(gcn_layers) > 0:
-        hidden_g = [GraphConv(gcn_layers[0], activation='relu')([hidden_0, hic])]
-        for i in range(1, len(gcn_layers)):
-            hidden_g.append(GraphConv(gcn_layers[i], activation='relu')([hidden_g[-1], hic]))
-    else:
-        hidden_g = []
-
-    if len(conv_layer_filters) > 0:
-        hidden_c = [Conv1D(conv_layer_filters[0], conv_layer_windows[0], activation='relu', padding='same')(hidden_0)]
-        for i in range(1, len(conv_layer_filters)):
-            hidden_c.append(Conv1D(conv_layer_filters[i], conv_layer_windows[i],
-                                   padding='same', activation='relu')(hidden_c[-1]))
-    else:
-        hidden_c = []
-
-    combined = Concatenate(axis=-1)(hidden_g + hidden_c + [hidden_0])
-    pred = Conv1D(400, 1)(combined)
-    res = Dot(axes=(2, 2))([pred, pred])
-    res = Multiply()([res, mask])
-
-    m = Model(inputs=[hic, epi_data, mask], outputs=res)
-    m.compile(optimizer=Adam(lr=lr), loss='mse')
-
-    if verbose:
-        m.summary()
-    return m
 

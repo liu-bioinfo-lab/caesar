@@ -129,7 +129,7 @@ def find_max_slice(arr):
 def find_stripes(chrom_files, output, reference_genome='hg38',
                  resolution=1000, max_distance=150000,
                  stripe_width=1, window_size=10,
-                 shortest=40000, score_threshold=70
+                 shortest=40000, score_threshold=100
                  ):
     chrom_lengths = load_chrom_sizes(reference_genome)
     n_strata = max_distance // resolution
@@ -164,8 +164,11 @@ def find_stripes(chrom_files, output, reference_genome='hg38',
         file.write(f'{ch}\t{direction}\t{pos}\t{head}\t{tail}\t{score}\n')
 
 
-chrs = ['chr2', 'chr5', 'chr8', 'chr11', 'chr14', 'chr15', 'chr21', 'chr22']
-# chrs = ['chr15']
-files = {ch: f'/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/human/raw/HFF/{ch}_200bp.txt' for ch in chrs}
-find_stripes(files, 'all_test_set.txt')
+if __name__ == '__main__':
+    chrs = ['chr2', 'chr5', 'chr8', 'chr11', 'chr14', 'chr15', 'chr21', 'chr22']
+    # chrs = ['chr15']
+    files = {ch: f'/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/human/raw/HFF/{ch}_200bp.txt' for ch in chrs}
+    find_stripes(files, 'HFF_stripes_test_set.txt')
+
+
 

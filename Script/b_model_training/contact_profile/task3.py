@@ -4,13 +4,13 @@ import argparse
 import numpy as np
 from os import path
 from scipy.stats import zscore
-from model import model_loop
+from model import model_fn
 from utils2 import chromosome_sizes, load_epigenetic_data, generate_batches
 
 
 def train_and_evaluate(args):
-    # Build current model
-    model = model_loop(
+    # Build model
+    model = model_fn(
         first_layer=[args.inp_kernel, args.inp_window],
         gcn_layers=[args.n_GC_units] * args.n_GC_layers,
         conv_layer_filters=[int(k) for k in args.conv_kernels.split(',')],
@@ -21,7 +21,12 @@ def train_and_evaluate(args):
         verbose=1
     )
 
-    # model.load_weights('temp_model_39.h5')
+    j = 0
+    while path.exists('temp_model_{0}.h5'.format(j)):
+        j += 1
+
+    if j != 0:
+        model.load_weights('temp_model_{0}.h5'.format(j - 1))
 
     # Load chromosomes
     cell_lines = [elm.strip() for elm in args.cell_line.split(',')]
@@ -30,22 +35,21 @@ def train_and_evaluate(args):
 
     # Load resolutions
     resolutions = [int(elm) for elm in args.inp_resolutions.split(',')]
-
     # Load epigenetic data
-    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
+    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3', 'H3K9me3']
     epigenetic_data = load_epigenetic_data(cell_lines, chromosomes, epi_names)
 
-    for i in range(args.epochs):
+    for i in range(j, args.epochs):
         print('Epoch', i, ':')
         t1 = time.time()
-        for (hics, epis, mask), micros in generate_batches(cell_lines, chromosomes, resolutions, epi_names,
-                                             epigenetic_data, args.batch_size, args.inp_window):
+        for (epi, hics), micros in generate_batches(cell_lines, chromosomes, resolutions, epi_names,
+                                                    epigenetic_data, args.batch_size, args.inp_window):
             t2 = time.time()
             print(' - Loading data:', t2 - t1, 's')
-            model.train_on_batch([hics, epis, mask], micros)
+            model.train_on_batch([hics, epi], micros)
             t3 = time.time()
             print(' - Training:', t3 - t2, 's')
-            mse = model.evaluate([hics, epis, mask], micros, batch_size=args.batch_size, verbose=0)
+            mse = model.evaluate([hics, epi], micros, batch_size=args.batch_size, verbose=0)
             t1 = time.time()
             print(' - Evaluating:', t1 - t3, 's')
             print(' - MSE:', mse)
@@ -60,13 +64,13 @@ if __name__ == '__main__':
     parser.add_argument(
         '--cell_line',
         type=str,
-        default='HFF',
+        default='hESC',
         help='cell_type'
     )
     parser.add_argument(
         '--chrs',
         type=str,
-        default='1,4,7,10',
+        default='1,4,7,10,13,17,18',
         help='"All", "all" or comma-separated chromosome ids'
     )
     parser.add_argument(
@@ -108,7 +112,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--inp_window',
         type=int,
-        default=3,
+        default=15,
         help='window size of the input conv layer'
     )
     parser.add_argument(
@@ -126,7 +130,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--conv_windows',
         type=str,
-        default='3',
+        default='15',
         help='comma-separated numbers of conv windows'
     )
     parser.add_argument(
@@ -138,8 +142,9 @@ if __name__ == '__main__':
     parser.add_argument(
         '--n_marks',
         type=int,
-        default=6,
+        default=7,
         help='number of epigenetic marks'
     )
     args, _ = parser.parse_known_args()
     train_and_evaluate(args)
+
