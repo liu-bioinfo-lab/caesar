@@ -1,5 +1,5 @@
 # CAESAR
-CAESAR (<ins>C</ins>hromosomal structure <ins>A</ins>nd <ins>E</ins>pigenomic\underline<ins>S</ins> <ins>A</ins>nalyze\underline{R}) 
+CAESAR (<ins>C</ins>hromosomal structure <ins>A</ins>nd <ins>E</ins>pigenomic<ins>S</ins> <ins>A</ins>nalyze{R}) 
 is a deep learning approach to predict nucleosome-resolution 3D chromatin contact maps from
 existing epigenomic features and lower-resolution Hi-C contact maps.
 
