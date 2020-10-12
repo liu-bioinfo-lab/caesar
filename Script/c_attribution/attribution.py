@@ -1,84 +1,75 @@
 """Attributions main."""
 import numpy as np
-import threading
-import logging
-from .utils import parse_coordinate, model_fn, find_1kb_region, load_all_data, int_grad, save_bigBed
-# Update databse
-from hirespy.serv.update import update
+from utils import parse_coordinate, find_250kb_region, load_all_data, int_grad, save_bigBed
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
-logger = logging.getLogger(__name__)
-
-
-def attribution(coordinate, signals, cell_type='mESC', verbose=1, info = {}):
-    """Calculate the attributions and output a series of bigBed files
-
-    Args:
-        coordinate (str): e.g., chr1:153500000-153501000,chr1:153540000-153542000
-        model (keras.models.Model): a loaded model
-        cell_type (str): cell type
-        verbose (int): whether to print
-
-    Return:
-        No return. Output to output_bigBed/.
-    """
-
-    # database progress
-    update(40, "Identify the chosen region...", info["port"])
-
+def attribution(cell_line, coordinate, epi_names,
+                epi_path, hic_path, hic_resolution, model1_path, model2_path,
+                verbose=1):
+    # coordinate (str): e.g., chr1:153500000-153501000,chr1:153540000-153542000
     if verbose:
         print(' Identify the chosen region...')
     # Step 1: process the coordinate and check whether it's illegal
     try:
         position = parse_coordinate(coordinate)
-    except ValueError as value_error:
-        raise(value_error)
     except:
-        raise(value_error)
-
+        raise ValueError
     print(position)
 
     # Step 2: find the corresponding 200-kb region, return the start coordinate
-    [ch, start_pos, p11, p12, p21, p22] = find_1kb_region(position)
+    [ch, start_pos, p11, p12, p21, p22] = find_250kb_region(position)
     print(ch, start_pos, p11, p12, p21, p22)
-
-    # database progress
-    update(45, "Loading data for calculation...", info["port"])
 
     if verbose:
         print(' Loading data for calculation...')
     # Step 3: Load data for the chosen region
-    hic, epi = load_all_data(ch, start_pos, signals, info["main"])
-
-    # database progress
-    update(50, "Calculating attributions...(This may take a while)", info["port"])
+    hic, epi = load_all_data(cell_line, ch, start_pos, epi_names, hic_path, hic_resolution, epi_path)
 
     if verbose:
         print(' Calculating attributions...')
     # Step 4: Calculate attributions
-    attributions = int_grad(hic, epi, [p11, p12, p21, p22], steps=100)
+    attributions = int_grad(hic, epi, [p11, p12, p21, p22], steps=100,
+                            model1_path=model1_path, model2_path=model2_path)
     # return a 1000 * 11 numpy array
     # np.save(f'att_chr7_22975000.npy', attributions)
 
-    # database progress
-    update(70, "Saving outputs...", info["port"])
+    # if verbose:
+    #     print(' Saving outputs...')
+    # Step 5: Save them into bed file and convert into bigBed file
+    # save_bigBed(attributions, signals, ch, start_pos)
+    # return position
 
     if verbose:
-        print(' Saving outputs...')
-    # Step 5: Save them into bed file and convert into bigBed file
-    save_bigBed(attributions, signals, ch, start_pos, info["output"])
-    return position
+        print(' Visualizing outputs...')
+    plt.figure()
+    max_ = np.quantile(attributions, 0.999)
+    g = sns.heatmap(attributions, vmax=max_, vmin=-max_, cmap='coolwarm', yticklabels=epi_names)
+    # plt.yticks(fontsize=14)
+    g.set_xticks(np.linspace(0, 1250, 6))
+    g.set_xticklabels([str(start_pos), '', '', '', '', str(start_pos + 250000)])
+    plt.tight_layout()
+    plt.savefig(f'Attribution_{ch}_{start_pos}.png')
+    plt.close()
+    return attributions
 
 
 if __name__ == '__main__':
-    signals = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3',
-               'H3K9ac', 'H3K27ac', 'H3K27me3', 'H3K36me3']
-    # Step 0: Load the model
-    print(' Loading the model...')
-    # model = model_fn()
-    # model = None
-    # Can we keep this model loaded in memory? Then users don't need to wait for this...
-
-    # Next steps:
-    # attribution('chr7:23105000-23107000,chr7:23182000-23184000')
+    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
+    model1_path = 'contact_profile_model_49.h5'
+    model2_path = 'loop_model_45.h6'
+    coordinate = 'chr1:153500000-153501000,chr1:153540000-153542000'
+    epi_path = '../processed_data/Epi/'
+    hic_path = '../raw_data/HiC/HFF/chr2.txt'
+    hic_resolution = 1000
+    attribution(cell_line='HFF',
+                coordinate='chr1:153500000-153501000,chr1:153540000-153542000',
+                epi_names=['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3'],
+                epi_path='../processed_data/Epi/',
+                hic_path='../raw_data/HiC/HFF/chr2.txt',
+                hic_resolution=1000,
+                model1_path='contact_profile_model_49.h5',
+                model2_path='loop_model_45.h6',
+                verbose=1)
 

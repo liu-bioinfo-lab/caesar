@@ -51,7 +51,7 @@ process_epi(file=file, cell_line='IMR-90', epi_name='ATAC_seq', output_dir='../p
 ```
 The 200-bp-resolution arrays will be outputted to `{output_dir}/ch/` as `.npy` format.
 
-The recommended storage method:
+The recommended storage strategy:
 ```
 /processed_data/MicroC/cell_line_1/chr1
           ...                     /chr2
@@ -70,7 +70,7 @@ The recommended storage method:
 ```
 
 
-## Model training
+## Model training ``/b_model_training/``
 In loop prediction parts, the loops called at 1 kb resolution should be placed into
 `loops_1kb.bedpe` first. Then start training with this command:
 ```
@@ -114,6 +114,29 @@ The only difference is that the residual contact map (observed Micro-C minus the
 should be the new target.
 
 
-## Attribution
+## Attribution ``/c_attribution/``
+We can calculate the attribution for arbitrary regions:
+```python
+attribution(
+    cell_line='HFF',
+    coordinate='chr1:153500000-153501000,chr1:153540000-153542000',
+    epi_names=['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3'],
+    epi_path='../processed_data/Epi/',
+    hic_path='../raw_data/HiC/HFF/chr2.txt',
+    hic_resolution=1000,
+    model1_path='contact_profile_model_49.h5',
+    model2_path='loop_model_45.h6',
+    verbose=1
+    )
+```
+- cell_line: (str) cell line
+- coordinate: (str) coordinate of the selected region (must be within 200 kb)
+- epi_names: (list of str) epigenomic features to use
+- epi_path: (str) the dir for storing all epi-features (See the recommended storing strategy)
+- hic_path: (str) the Hi-C `.txt` file for the corresponding chromosome
+- hic_resolution: (int) Hi-C's resolution
+- model1_path: (str) the part for predicting contact profile
+- model2_path: (str) the part for predicting loops
 
+The result will be outputted as a heatmap.
 
