@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_HiC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/a_data_processing/split_HiC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_MicroC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/a_data_processing/split_MicroC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_epi_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/a_data_processing/split_epi_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/merged_loops_1kb.bedpe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/merged_loops_5kb.bedpe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/task3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/loops/task3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/utils2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Script/b_model_training/loops/utils2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_result_evaluation/SCC_curve.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_result_evaluation/hicrep2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/HFF_loops_test_set.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/HFF_stripes_test_set.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/fast_call_loops.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/hg38.chrom.sizes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/quagga_stripe_caller.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +16,20 @@
         <entry file="file://$PROJECT_DIR$/Script/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="481">
-                <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+              <first_editor relative-caret-position="2574">
+                <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="110">
+                <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               </first_editor>
               <second_editor />
             </state>
@@ -57,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="417">
@@ -123,7 +119,6 @@
         <option value="$PROJECT_DIR$/Utils/fast_call_loops.py" />
         <option value="$PROJECT_DIR$/Utils/MYC_GATA1/cancer_regions.py" />
         <option value="$PROJECT_DIR$/Model/README.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/split_MicroC.py" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/split_HiC.py" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/split_epi_features.py" />
@@ -132,8 +127,9 @@
         <option value="$PROJECT_DIR$/Utils/SCC_curve/hicrep2.py" />
         <option value="$PROJECT_DIR$/Script/b_model_training/loops/utils2.py" />
         <option value="$PROJECT_DIR$/Script/b_model_training/loops/task3.py" />
-        <option value="$PROJECT_DIR$/Script/README.md" />
         <option value="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" />
+        <option value="$PROJECT_DIR$/Script/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -163,26 +159,6 @@
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
               <item name="Script" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
-              <item name="contact_profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Script" type="462c0819:PsiDirectoryNode" />
-              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
-              <item name="loops" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
@@ -454,16 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="264">
-            <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Script/a_data_processing/split_HiC.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -537,16 +503,6 @@
     <entry file="file://$PROJECT_DIR$/Script/b_model_training/loops/model.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Script/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="481">
-            <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/model.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -567,6 +523,26 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2574">
+            <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="110">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
