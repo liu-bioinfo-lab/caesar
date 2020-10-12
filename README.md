@@ -61,11 +61,10 @@ and graph convolutional layers which extract spatial epigenomic patterns over th
 In ``/Script/b_model_training/``, we provide the code for training CAESAR model with the processed data.
 We recommend using GPU to train the model, and it might take more than 10 hours.
 
-### Evaluating the model with SCC
-In ``/Script/c_result_evaluating/``, we provide the code for training CAESAR model with the processed files from last step.
-
-
 ### Attributing results toward epigenomic features
+In ``/Script/c_attribution/``, we provide the code for attribution an arbitrary region toward the input epigenomic features.
+With provided coordinates and trained model, the users can calculate the attribution
+from each locus of each epigenomic feature.
 
 
 ## Applying CAESAR model
@@ -74,12 +73,12 @@ that you are interested in.
 
 For example, after loading the processed Hi-C contact map and epugenomic features of HFF from ``/Model/sample_data/HFF/``,
 we can use ``/Model/impute_regions_with_processed_data.py`` to quickly impute the contact map in region chr2:70,100,000-70,350,000.
-The results will be visualized in ``/Model/outputs/chr2_70100000.png``:
+The result is visualized in ``/Model/outputs/chr2_70100000.png``:
 ![GitHub Logo](/Model/outputs/chr2_70100000_pred.png)
 
 The provided models are trained with surrogate Hi-C (averaged from hESC, HFF, GM12878, K562, and IMR-90),
 Micro-C of hESC and HFF, and epigenomic features of hESC and HFF.
-This is the model we used to impute other tissues and cell lines.
+This is the model we used to impute the high-resolution contact maps of other tissues and cell lines.
 ### i. impute_regions_with_raw_data.py
 ```python
 hic_path = '/nfs/turbo/data/bulkHiC/Dekker_HFF/processed/chr2_1kb.txt'
