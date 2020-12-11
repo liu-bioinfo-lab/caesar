@@ -286,7 +286,7 @@ def int_grad(hic, epigenetic, positions, steps=100,
                     grad_lp,
                     feed_dict={
                         model_lp.input[0]: hics[s:s+20, :, :],
-                        model_lp.input[1]: hics[s:s+20, 6:-6, :],
+                        model_lp.input[1]: functionals[s:s+20, 6:-6, :],
                         model_lp.input[2]: mask[s:s+20, :, :]
                     }
                 )[0][:, 1:-1, :]
