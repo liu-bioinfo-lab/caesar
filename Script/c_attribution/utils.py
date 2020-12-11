@@ -233,7 +233,7 @@ def model_loop(model_weights='HFF6_loop_model_39.h5',
 
 
 def int_grad(hic, epigenetic, positions, steps=100,
-             model1_path='contact_profile_model_49.h5', model2_path='loop_model_45.h6'):
+             model1_path='contact_profile_model_49.h5', model2_path='loop_model_45.h5'):
     functionals = np.zeros((steps, 1264, epigenetic.shape[1]))
     hics = np.zeros((steps, 1250, 1250))
     mask = np.zeros((steps, 1250, 1250))
