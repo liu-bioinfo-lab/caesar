@@ -251,20 +251,29 @@ def int_grad(hic, epigenetic, positions, steps=100,
 
     grad_res = np.zeros((steps, 1250, epigenetic.shape[1]))
 
+    # Previous Steps: preparing the inputs for integrated gradients (IG)
+    # If the baseline is X_0, and the real input is X_1, and we use s steps
+    # the IG inputs should be [X_0, 1/s * (X_1 - X_0) + X_0, 2/s * (X_1 - X_0) + X_0, ...]
+    # the more steps to use, the more accurate the approximation
     graph = Graph()
     with graph.as_default():
         with Session() as sess:
+            # 1. Load the keras model (here we have 2 separate models)
             model = model_fn(model1_path)
             model_lp = model_loop(model2_path)   # the path of the loop model
 
+            # 2. Define the gradients, the gradients can be calculated for a chosen region of the output
+            # Here, the region is sliced by [:, positions[0]:positions[1], positions[2]:positions[3]]
+            # (the first index is the batch size)
             grad = K.gradients(
                 model.outputs[0][:, positions[0]:positions[1], positions[2]:positions[3]],
                 model.inputs)
-
             grad_lp = K.gradients(
                 model_lp.outputs[0][:, positions[0]:positions[1], positions[2]:positions[3]],
                 model_lp.input)
 
+            # 3. Approximate the integrated gradients
+            # To reduce computational burden, we calculate 20 inputs as a batch
             for s in range(0, steps, 20):
                 _grad = sess.run(
                     grad,
@@ -272,7 +281,7 @@ def int_grad(hic, epigenetic, positions, steps=100,
                         model.inputs[0]: hics[s:s+20, :, :],
                         model.inputs[1]: functionals[s:s+20, :, :]
                     }
-                )[1][:, 7:-7, :]
+                )[1][:, 7:-7, :]  # [7:-7]: remove the padding of the input
                 _grad_lp = sess.run(
                     grad_lp,
                     feed_dict={
@@ -283,7 +292,7 @@ def int_grad(hic, epigenetic, positions, steps=100,
                 )[0][:, 1:-1, :]
 
                 grad_res[s:s+20, :, :] = _grad + _grad_lp * 0.5
-    grad_res = np.sum(grad_res, axis=0) / steps
+    grad_res = np.sum(grad_res, axis=0) / steps  # divided by the # of steps
     return grad_res.T  # Remove the 14kb padding region
 
 
