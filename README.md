@@ -11,8 +11,7 @@ Ref: Feng, F., Yao, Y., Wang, X. Q. D., Zhang, X., & Liu, J. (2020). Connecting 
 - Python-3.6.8
 - numpy-1.17.4
 - scipy-1.4.1
-- keras-2.2.4
-- tensorflow-1.13.1
+- tensorflow-2.4.1
 - matplotlib-3.0.2
 - pyBigWig-0.3.17
 - seaborn-0.9.0

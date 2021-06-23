@@ -1,72 +1,128 @@
 # Script
 
 ## Data processing ``/a_data_processing/``
-### split_MicroC
-Split the entire Micro-C contact map into 250 kb squares for training.
-```python
-cell_type = 'HFF'
-input_dir = '../raw_data/HFF/'
-output_dir = '../processed_data/MicroC/'
-process_MicroC(type=cell_type, input_dir=input_dir, output_dir=output_dir)
-```
-In `input_dir`, each chromosome has a corresponding `.txt` file named like `chr1.txt`, `chr2.txt`.
-Each ``.txt`` file is in the format of "position1 - position2 - contacts". E.g.,
-```
-10000 10000 3
-10000 10200 8
-10000 180600 4
-...
-```
-The 250 kb squares will be outputted to `{output_dir}/ch/` as `.npy` format.
+### process_epi_features
+Process bigwig or bedgraph files into numpy arrays for each epi-feature.
 
-### split_HiC
-Split the entire Hi-C contact maps into 250 kb squares for training.
-```python
-input_dirs = [
-    '/nfs/turbo/data/bulkHiC/H1-hESC/processed/',
-    '/nfs/turbo/data/bulkHiC/K562/processed/',
-    '/nfs/turbo/data/bulkHiC/HFF/processed/',
-    '/nfs/turbo/data/bulkHiC/GM12878/processed/'
-    '/nfs/turbo/data/bulkHiC/IMR90/processed/'
-]
-output_dir = '../processed_data/HiC/'
-process_hics(type='HFF', input_dirs=input_dirs, output_dir=output_dir, resolution=1000)
+The raw data should be in:
 ```
-Since we may need to generate surrogate Hi-C, the function allows inputting multiple Hi-C folders.
-In each dir of the `input_dirs`, each chromosome has a corresponding `.txt` file named like `chr1.txt`, `chr2.txt`.
-Each ``.txt`` file is in the format of "position1 - position2 - contacts". E.g.,
+/raw/data/path/hESC/hESC_ATAC_seq_hg38.bedGraph
+          ...      /hESC_H3K4me1_hg38.bigWig
+          ...        
+/raw/data/path/HFF/HFF_DNase_seq_hg38.bedGraph
+          ...     /hESC_H3K4me1_hg38.bedGraph
+          ...    
+```
+
+The processed files are in:
+```  
+/processed_data/Epi/hESC/chr1/chr1_200bp_ATAC_seq.npy
+          ...                /chr1_200bp_H3K4me1.npy
+          ...                /...
+          ...           /chr2/chr2_200bp_ATAC_seq.npy
+          ...           /chr2/...
+          ...           ...
+/processed_data/Epi/HFF/...
+          ...           ...
+```
+
+Example code:
+```python
+signals = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
+cell_lines = ['hESC', 'HFF']
+raw_path = '/raw/data/path'
+processed_path = '/processed_data/Epi'
+
+# Step 1: bigWig/bedGraph to npy
+bigWig_bedGraph_to_vector(cell_lines, signals, raw_path, processed_path)
+
+# Step 2: normalize epi factors
+info_dir = '01_epi_stats'
+normalize_epi(signals, cell_lines, processed_path, info_dir)
+```
+
+### process_MicroC
+Process the entire Micro-C contact map into 1250 strata (200 bp resolution).
+
+The raw data should be in:
+```
+/raw/data/path/hESC/chr1_200bp.txt
+          ...      /chr2_200bp.txt
+          ...        
+/raw/data/path/HFF/chr1_200bp.txt
+          ...     /chr2_200bp.txt
+          ...    
+```
+Each ``.txt`` file is in the format of "position1 - position2 - contacts",
+which can be generated with ``dump`` command of JuiceTools.
+E.g.,
 ```
 10000 10000 3
 10000 1100 8
 10000 180000 4
 ...
 ```
-The 250 kb squares will be outputted to `{output_dir}/ch/` as `.npy` format.
 
-### split_epi_features
-Process bigwig or bedgraph files into numpy arrays for each epi-feature.
+The processed files are in:
+```  
+/processed_data/MicroC/hESC/chr1/chr1_200bp_strata_1.npy
+          ...                   /chr1_200bp_strata_2.npy
+          ...                   /...
+          ...              /chr2/...
+          ...           
+/processed_data/MicroC/HFF/...
+          ...              ...
+```
+
+Example code:
 ```python
-file = '../raw_data/epi/IMR90_ATAC_seq_hg38.bedGraph'
-process_epi(file=file, cell_line='IMR-90', epi_name='ATAC_seq', output_dir='../processed_data/Epi/IMR90/')
-```
-The 200-bp-resolution arrays will be outputted to `{output_dir}/ch/` as `.npy` format.
+cell_lines = ['hESC', 'HFF']
+info_path = '02_micro_stats'
+raw_path = '/raw/data/path'
+processed_path = '/processed_data/MicroC'
 
-The recommended storage strategy:
+MicroC_to_strata(cell_lines, info_path, raw_path, processed_path, max_distance=250000, threshold=1.01, rg='hg38')
 ```
-/processed_data/MicroC/cell_line_1/chr1
-          ...                     /chr2
-          ...                     /chr3
-          ...                     ...
-/processed_data/MicroC/cell_line_2/chr1
-                                  ...
-/processed_data/HiC/cell_line_1/chr1
-          ...                  ...
-/processed_data/HiC/cell_line_2/chr1
-          ...                  ...       
-/processed_data/Epi/cell_line_1/chr1
-          ...                  ...
-/processed_data/Epi/cell_line_2/chr1
-          ...                  ...
+
+### split_HiC
+Process the entire Hi-C contact maps into 200 strata (1 kb resolution).
+
+The raw data should be in:
+```
+/raw/data/path/hESC/chr1_200bp.txt
+          ...      /chr2_200bp.txt
+          ...        
+/raw/data/path/K562/chr1_200bp.txt
+          ...      /chr2_200bp.txt
+          ...    
+```
+Each ``.txt`` file is in the format of "position1 - position2 - contacts",
+which can be generated with ``dump`` command of JuiceTools.
+E.g.,
+```
+10000 10000 3
+10000 1100 8
+10000 180000 4
+...
+```
+
+The processed files are in:
+```  
+/processed_data/HiC/hESC/chr1/chr1_1000bp_strata_1.npy
+          ...                /chr1_1000bp_strata_2.npy
+          ...                   /...
+          ...           /chr2/...
+          ...           
+/processed_data/MicroC/K562/...
+          ...               ...
+```
+```python
+cell_lines = ['hESC', 'HFF']
+info_path = '02_micro_stats'
+raw_path = '/raw/data/path'
+processed_path = '/processed_data/HiC'
+
+HiC_to_strata(cell_lines, info_path, raw_path, processed_path, max_distance=250000, rg='hg38')
 ```
 
 
