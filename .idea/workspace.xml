@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image/CAESAR.png" beforeDir="false" afterPath="$PROJECT_DIR$/Image/CAESAR.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Script/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Script/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_HiC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_MicroC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/split_epi_features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/hg38.chrom.sizes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/layers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/mm10.chrom.sizes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/contact_profile/utils2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/hg38.chrom.sizes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/layers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/loops_1kb.bedpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/loops_5kb.bedpe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/mm10.chrom.sizes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/task3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script/b_model_training/loops/utils2.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +31,8 @@
         <entry file="file://$PROJECT_DIR$/Script/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="499">
-                <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+              <first_editor relative-caret-position="485">
+                <caret line="132" column="66" selection-start-line="132" selection-start-column="66" selection-end-line="132" selection-end-column="66" />
               </first_editor>
               <second_editor />
             </state>
@@ -34,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/Script/a_data_processing/03_process_HiC.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="721">
-              <caret line="104" column="98" lean-forward="true" selection-start-line="104" selection-start-column="98" selection-end-line="104" selection-end-column="98" />
+              <caret line="104" column="98" selection-start-line="104" selection-start-column="98" selection-end-line="104" selection-end-column="98" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -45,22 +54,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Script/a_data_processing/02_process_MicroC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="91" column="117" lean-forward="true" selection-start-line="91" selection-start-column="117" selection-end-line="91" selection-end-column="117" />
+            <state relative-caret-position="655">
+              <caret line="89" column="45" lean-forward="true" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/a_data_processing/01_process_epi_features.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="170" column="42" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +79,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="858">
-                <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+              <first_editor relative-caret-position="682">
+                <caret line="64" selection-start-line="64" selection-end-line="64" />
               </first_editor>
               <second_editor />
             </state>
@@ -91,31 +88,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
+        <entry file="file://$PROJECT_DIR$/Script/b_model_training/02_contact_profile/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/c_attribution/attribution.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="721">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
               <folding>
-                <element signature="e#25#43#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Script/b_model_training/loops/utils2.py">
+        <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loop/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2046">
-              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+            <state relative-caret-position="809">
+              <caret line="51" column="75" lean-forward="true" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loop/data_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="677">
+              <caret line="293" column="36" selection-start-line="293" selection-start-column="36" selection-end-line="293" selection-end-column="36" />
+              <folding>
+                <element signature="e#1#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Script/b_model_training/02_contact_profile/data_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-907">
+              <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,10 +184,17 @@
         <option value="$PROJECT_DIR$/Script/c_attribution/attribution.py" />
         <option value="$PROJECT_DIR$/Model/impute_regions_with_raw_data.py" />
         <option value="$PROJECT_DIR$/Script/c_attribution/utils.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/01_process_epi_features.py" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/02_process_MicroC.py" />
         <option value="$PROJECT_DIR$/Script/a_data_processing/03_process_HiC.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/01_loops/CAESAR_model.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/01_loops/data_utils.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/01_loops/task.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/task.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/data_utils.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/01_loop/data_utils.py" />
+        <option value="$PROJECT_DIR$/Script/b_model_training/01_loop/task.py" />
         <option value="$PROJECT_DIR$/Script/README.md" />
       </list>
     </option>
@@ -219,6 +241,33 @@
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
               <item name="Script" type="462c0819:PsiDirectoryNode" />
               <item name="a_data_processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Script" type="462c0819:PsiDirectoryNode" />
+              <item name="a_data_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="01_epi_stats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Script" type="462c0819:PsiDirectoryNode" />
+              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Script" type="462c0819:PsiDirectoryNode" />
+              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
+              <item name="01_loop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Script" type="462c0819:PsiDirectoryNode" />
+              <item name="b_model_training" type="462c0819:PsiDirectoryNode" />
+              <item name="02_contact_profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
@@ -318,11 +367,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Model/layers.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/stripe_caller.py" />
-    <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/merged_loops_1kb.bedpe" />
-    <entry file="file://$PROJECT_DIR$/Model/all_test_set.txt" />
-    <entry file="file://$PROJECT_DIR$/Model/model.py" />
     <entry file="file://$PROJECT_DIR$/Model/load_surrogate_exp.py" />
     <entry file="file://$PROJECT_DIR$/Model/HiC_exps.txt">
       <provider selected="true" editor-type-id="text-editor" />
@@ -527,16 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="858">
-            <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Script/a_data_processing/hg38.chrom.sizes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -569,22 +603,102 @@
     <entry file="file://$PROJECT_DIR$/Script/a_data_processing/03_hic_stats/hic_depth.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Script/a_data_processing/02_process_MicroC.py">
+    <entry file="file://$PROJECT_DIR$/Script/a_data_processing/03_process_HiC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="91" column="117" lean-forward="true" selection-start-line="91" selection-start-column="117" selection-end-line="91" selection-end-column="117" />
+        <state relative-caret-position="721">
+          <caret line="104" column="98" selection-start-line="104" selection-start-column="98" selection-end-line="104" selection-end-column="98" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Script/a_data_processing/03_process_HiC.py">
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loops/CAESAR_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
-          <caret line="104" column="98" lean-forward="true" selection-start-line="104" selection-start-column="98" selection-end-line="104" selection-end-column="98" />
+        <state relative-caret-position="-445">
+          <caret line="147" column="56" selection-start-line="147" selection-start-column="56" selection-end-line="147" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loops/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="106" column="96" lean-forward="true" selection-start-line="106" selection-start-column="82" selection-end-line="106" selection-end-column="96" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loops/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="682">
+            <caret line="64" selection-start-line="64" selection-end-line="64" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/a_data_processing/02_process_MicroC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="89" column="45" lean-forward="true" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/02_contact_profile/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-907">
+          <caret line="142" column="21" lean-forward="true" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loop/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="293" column="36" selection-start-line="293" selection-start-column="36" selection-end-line="293" selection-end-column="36" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/01_loop/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="51" column="75" lean-forward="true" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Script/b_model_training/02_contact_profile/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,8 +706,8 @@
     <entry file="file://$PROJECT_DIR$/Script/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="499">
-            <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+          <first_editor relative-caret-position="485">
+            <caret line="132" column="66" selection-start-line="132" selection-start-column="66" selection-end-line="132" selection-end-column="66" />
           </first_editor>
           <second_editor />
         </state>

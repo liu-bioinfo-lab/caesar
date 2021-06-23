@@ -127,47 +127,16 @@ HiC_to_strata(cell_lines, info_path, raw_path, processed_path, max_distance=2500
 
 
 ## Model training ``/b_model_training/``
-In loop prediction parts, the loops called at 1 kb resolution should be placed into
-`loops_1kb.bedpe` first. Then start training with this command:
-```
-python task3.py --cell_line HFF --chrs 1,4,7,10,13,17,18 \
-    --inp_resolutions 1000 --lr 0.0004 --epoches 50 --batch_size 50 \
-    --n_GC_layers 2 --n_GC_units 96 --conv_kernels 96 --conv_windows 3 \
-    --checkpoint_frequency 5 \
-    --features ATAC_seq,CTCF,H3K4me1,H3K4me3,H3K27ac,H3K27me3 \
-    --epi_path /processed_data/Epi/ \
-    --hic_path /processed_data/HiC/ \
-    --micro_path /processed_data/Micro/
-```
-- cell_line: comma-separated cell lines (e.g., HFF,hESC)
-- chrs: chromosomes for training
-- inp_resolutions: Hi-C resolution
-- lr: learning rate
-- epoches: number of epoches
-- batch_size: batch size
-- n_GC_layers: number of graph convolutional layers
-- n_GC_units: number of graph convolution kernels in each layer
-- conv_kernels: comma-separated numbers of 1D convolution kernels in each layer (e.g., 96,96)
-- conv_windows: comma-separated sizes of 1D convolution windows in each layer (e.g., 3,3)
-- checkpoint_frequency: how often (# of epoches) to save one temp model
-- features: epigenomic features to use
-- epi_path: path of epigenomic features
-- hic_path: path of Hi-C
-- micro_path: path of Micro-C
+In ``/01_loop/`` and ``/02_contact_profile/``, the model can be trained by running ``task.py``:
+```python
+processed_path = '/processed_data'  # The same path in the previous steps
+HiC_cell_lines = ['HFF']  # If using surrogate Hi-C, you can use ['HFF', 'hESC', 'K562', 'GM12878', 'IMR-90']
+MicroC_cell_line = 'HFF'
 
-In contact profile predicting part:
+train_and_evaluate(processed_path, HiC_cell_lines, MicroC_cell_line, epoches=100, batch_size=20, checkpoint_frequency=20)
 ```
-python task3.py --cell_line HFF --chrs 1,4,7,10,13,17,18 \
-    --inp_resolutions 1000 --lr 0.0004 --epoches 50 --batch_size 50 \
-    --n_GC_layers 2 --n_GC_units 96 --conv_kernels 96 --conv_windows 15 \
-    --checkpoint_frequency 5 \
-    --features ATAC_seq,CTCF,H3K4me1,H3K4me3,H3K27ac,H3K27me3 \
-    --epi_path /processed_data/Epi/ \
-    --hic_path /processed_data/HiC/ \
-    --micro_path /processed_data/Micro_residual/
-```
-The only difference is that the residual contact map (observed Micro-C minus the loop predicting part's output)
-should be the new target.
+
+Training requires about 200 Gb RAM and takes about 8 hours.
 
 
 ## Attribution ``/c_attribution/``

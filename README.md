@@ -48,7 +48,7 @@ and therefore we used a 250 kb sliding window with 50 kb step length along the d
 select the regions and fed them one by one into the model.
 In ``/Script/a_data_processing/``, we provide the code for splitting large contact maps into
 250 kb regions and load epigenomic tracks into numpy arrays.
-All processed files will take about 1 TB of storage for one cell line.
+All processed files will take about 50 GB of storage for one cell line.
 
 ### Model training
 CAESAR's inputs include a lower-resolution Hi-C contact map
@@ -61,7 +61,7 @@ The architecture of CAESAR includes ordinary 1D convolutional layers which extra
 and graph convolutional layers which extract spatial epigenomic patterns over the neighborhood specified by `G`.
 
 In ``/Script/b_model_training/``, we provide the code for training CAESAR model with the processed data.
-We recommend using GPU to train the model, and it might take more than 10 hours.
+We recommend using GPU to train the model, and it takes about 10 hours.
 
 ### Attributing results toward epigenomic features
 In ``/Script/c_attribution/``, we provide the code for attribution an arbitrary region toward the input epigenomic features.
