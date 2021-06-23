@@ -2,50 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Model/HiC_exps.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/contact_profile_model_49.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/impute_regions_with_processed_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/impute_regions_with_raw_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/loop_model_45.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/model_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/outputs/chr2_70100000_hic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/outputs/chr2_70100000_pred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/outputs/chr8_127600000_hic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/outputs/chr8_127600000_pred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_1000bp_70100000_70350000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_ATAC_seq.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_CTCF.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_H3K27ac.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_H3K27me3.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_H3K4me1.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_H3K4me2.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/sample_data/HFF/chr2_200bp_H3K4me3.npy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/Attribution_127725000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/Attribution_127725000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/CAESAR_chr2_10100000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/CAESAR_chr2_10100000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/CAESAR_chr2_127725000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/CAESAR_chr2_127725000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/MicroC_chr2_10100000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/MicroC_chr2_10100000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/MicroC_chr2_127725000.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/MicroC_chr2_127725000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/attribution.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Attributions/example_region.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Fine-scale/HFF_loops_test_set.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Fine-scale/HFF_stripes_test_set.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Fine-scale/fast_call_loops.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Fine-scale/hg38.chrom.sizes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Fine-scale/quagga_stripe_caller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/CRISPRi_score_K562_hg38.bedGraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/K562_GATA1_pred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/K562_MYC_pred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/cancer_regions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/mat_K562_GATA1_pred.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MYC_GATA1/mat_K562_MYC_pred.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/SCC_curve/SCC_curve.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/SCC_curve/hicrep2.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,8 +64,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="265">
-                <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+              <first_editor relative-caret-position="529">
+                <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               </first_editor>
               <second_editor />
             </state>
@@ -315,6 +272,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20389885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -718,8 +676,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="265">
-            <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+          <first_editor relative-caret-position="529">
+            <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           </first_editor>
           <second_editor />
         </state>

@@ -79,7 +79,7 @@ In this step, we extract a 250-kb region from the data processed in previous ste
 Since the processed data is too large to upload to GitHub, we provide an extracted example region
 in ``/Model/example_inputs/`` (chr2:23,850,000-24,100,000) for users to quickly test CAESAR.
 
-HiC in this region:
+(Interpolated) HiC in this region:
 
 ![GitHub Logo](/Model/example_outputs/chr2_23850000_hic.png)
 
