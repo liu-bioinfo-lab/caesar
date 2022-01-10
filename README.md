@@ -26,6 +26,28 @@ that you are interested in.
 
 ### i. 01_generate_example_input_regions.py
 Before this step, users need to get Hi-C files and epigenomic features ready.
+The example data can be downloaded at XXXX.
+
+This .py file generate numpy matrices from Hi-C contact maps and epigenomic features for the next steps.
+
+The parameters users need to specify:
+- impute_cell_name: the cell to impute (must match the file name of bigWig/bedGraph files)
+- processed_hic_path: the folders containing input Hi-C in .txt format (generated with JuiceTools dump). File names must be chr{?}_1kb.txt.
+- bigwig_path: the folder containing all bigWig/bedGraph files. File names must be {cell_name}_{epi_name}_hg38.bigWig/bedGraph.
+- epi_names: ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3'] 
+- ch_coord: The regions you need to impute (must >= 250Kb)
+- HiC_cell_lines: The Hi-C contact maps to use
+- temp_folder: temp folder for storage
+
+### ii. 02_example_region_from_model.py
+This .py file generate 250 Kb regions (Hi-C and epi) from the temp outputs of the last step 
+and the use CAESAR model to impute 200-bp-resolution Micro-C contact maps.
+
+The parameters (except model paths) have to be consistent with 01_generate_example_input_regions.py.
+
+
+### iii. 03_visualize_results.py
+
 
 
 Since the processed data is too large to upload to GitHub, we provide an extracted example region
@@ -34,6 +56,14 @@ in ``/Model/example_inputs/`` (chr2:23,850,000-24,100,000) for users to quickly 
 (Interpolated) HiC in this region:
 
 ![GitHub Logo](/Model/example_outputs/chr2_23850000_hic.png)
+
+The predicted region chr2:23,850,000-24,100,000:
+
+![GitHub Logo](/Model/example_outputs/chr2_23850000_pred.png)
+
+Comparing with the ground truth - real Micro-C contact map:
+
+![GitHub Logo](/Model/example_outputs/chr2_23850000_micro.png)
 
 
 ### ii. example_region_from_model.py
@@ -88,14 +118,5 @@ We recommend using GPU to train the model, and it takes about 10 hours.
 In ``/Script/c_attribution/``, we provide the code for attribution an arbitrary region toward the input epigenomic features.
 With provided coordinates and trained model, the users can calculate the attribution
 from each locus of each epigenomic feature.
-
-
-The predicted region chr2:23,850,000-24,100,000:
-
-![GitHub Logo](/Model/example_outputs/chr2_23850000_pred.png)
-
-Comparing with the ground truth - real Micro-C contact map:
-
-![GitHub Logo](/Model/example_outputs/chr2_23850000_micro.png)
 
 

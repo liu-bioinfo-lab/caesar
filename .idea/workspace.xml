@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/01_strata_to_example_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/_01_generate_example_input_regions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/02_example_region_from_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/_02_example_region_from_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_inputs/chr2_23850000_epi.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_inputs/chr2_23850000_hic.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_inputs/chr2_23850000_mask.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_inputs/chr2_23850000_micro.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_inputs/chr2_23850000_pos_enc.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_outputs/chr2_23850000_hic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_outputs/chr2_23850000_micro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/example_outputs/chr2_23850000_pred.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/02_example_region_from_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/02_example_region_from_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/01_generate_example_input_regions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="200" column="73" selection-start-line="200" selection-start-column="73" selection-end-line="200" selection-end-column="73" />
+            <state relative-caret-position="294">
+              <caret line="178" column="29" lean-forward="true" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -50,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/_02_example_region_from_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="-281">
+              <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -59,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Model/02_example_region_from_model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="344">
-              <caret line="211" selection-start-line="211" selection-end-line="211" />
+              <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -81,12 +71,12 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="406">
-                <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <first_editor relative-caret-position="431">
+                <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               </first_editor>
               <second_editor />
             </state>
@@ -180,9 +170,9 @@
         <option value="$PROJECT_DIR$/Utils/loop_caller/hiccups.py" />
         <option value="$PROJECT_DIR$/Model/01_strata_to_example_regions.py" />
         <option value="$PROJECT_DIR$/Model/_01_generate_example_input_regions.py" />
-        <option value="$PROJECT_DIR$/Model/02_example_region_from_model.py" />
         <option value="$PROJECT_DIR$/Model/01_generate_example_input_regions.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Model/02_example_region_from_model.py" />
       </list>
     </option>
   </component>
@@ -212,6 +202,19 @@
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="previous_example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="previous_example" type="462c0819:PsiDirectoryNode" />
+              <item name="example_outputs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -300,9 +303,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Script/a_data_processing/split_MicroC.py" />
-    <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/model.py" />
-    <entry file="file://$PROJECT_DIR$/Script/b_model_training/loops/task3.py" />
     <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/task3.py" />
     <entry file="file://$PROJECT_DIR$/Script/b_model_training/contact_profile/utils2.py" />
     <entry file="file://$PROJECT_DIR$/Script/b_model_training/loops/model.py" />
@@ -492,10 +492,39 @@
     <entry file="file://$PROJECT_DIR$/Model/utils/epi_norm_factors_DNase.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Model/01_generate_example_input_regions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="178" column="29" lean-forward="true" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_hic.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_micro.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_pred.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="431">
+            <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Model/_02_example_region_from_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        <state relative-caret-position="-281">
+          <caret line="138" column="49" lean-forward="true" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -505,30 +534,10 @@
     <entry file="file://$PROJECT_DIR$/Model/02_example_region_from_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
+          <caret line="234" lean-forward="true" selection-start-line="234" selection-end-line="234" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/01_generate_example_input_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="200" column="73" selection-start-line="200" selection-start-column="73" selection-end-line="200" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="406">
-            <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

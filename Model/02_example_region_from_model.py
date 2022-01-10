@@ -7,6 +7,14 @@ from scipy.signal import convolve2d
 from CAESAR_model import CAESAR, CAESAR_loop
 
 
+# The contact map has to be OE-normalized, but since here we only impute one region, it's impossible to OE-norm
+# To better visualize, we adjust the weights of different strata
+norm_mat = np.zeros((1250, 1250))
+for i in range(1250):
+    for j in range(1250):
+        norm_mat[i, j] = 1 + abs(i - j) / 625
+
+
 def positional_encoding(length=1250, position_dim=8):
     assert position_dim % 2 == 0
     position = np.zeros((length, position_dim))
@@ -210,18 +218,24 @@ if __name__ == '__main__':
     #  The above lines are all you need to set
     #######################################################################################
 
-    # Step 1: Split the region into small 250 Kb matrices
+    if not os.path.exists(f'{temp_folder}/example_inputs'):
+        os.mkdir(f'{temp_folder}/example_inputs')
+    if not os.path.exists(f'{temp_folder}/example_outputs'):
+        os.mkdir(f'{temp_folder}/example_outputs')
+
     generator = training_data_generator(ch_coord, HiC_cell_lines, impute_cell_name, epi_names,
-                                        processed_path=processed_path,
-                                        pos_enc_dim=8, n_epoches=1, batch_size=1)
-    for epoch, batch, (hics, epis, pos_enc, mask), micros, kys in generator:
+                                        processed_path=temp_folder, pos_enc_dim=8, n_epoches=1, batch_size=1)
+    for epoch, batch, (hics, epis, pos_enc, mask), kys in generator:
+        print('Epoch:', epoch, ' Batch:', batch)
         ky = kys[0]
         print(ky)
 
-        np.save(f'example_inputs/{ky}_hic.npy', hics)
-        np.save(f'example_inputs/{ky}_epi.npy', epis)
-        np.save(f'example_inputs/{ky}_micro.npy', micros)
-        np.save(f'example_inputs/{ky}_pos_enc.npy', pos_enc)
-        np.save(f'example_inputs/{ky}_mask.npy', mask)
+        np.save(f'{temp_folder}/example_inputs/{ky}_hic.npy', hics)
+        np.save(f'{temp_folder}/example_inputs/{ky}_epi.npy', epis)
 
+        _res1 = model.predict([hics, epis, pos_enc])[0, :, :]
+        _res2 = model_loop.predict([hics, epis, pos_enc, mask])[0, :, :]
+        _res = convolve2d(_res1 + _res2, np.ones((3, 3)) / 9, mode='same') * norm_mat
+
+        np.save(f'{temp_folder}/example_outputs/{ky}_epi.npy', _res)
 
