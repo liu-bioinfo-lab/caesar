@@ -20,7 +20,28 @@ Ref: Feng, F., Yao, Y., Wang, X. Q. D., Zhang, X., & Liu, J. (2020). Connecting 
 All these dependencies can be installed with "pip install" or "conda install" command within several minutes.
 
 
-## Usage
+## Using CAESAR model
+In ``/Model/``, we provide some examples of quickly applying the trained model to impute the region
+that you are interested in.
+
+### i. 01_generate_example_input_regions.py
+Before this step, users need to get Hi-C files and epigenomic features ready.
+
+
+Since the processed data is too large to upload to GitHub, we provide an extracted example region
+in ``/Model/example_inputs/`` (chr2:23,850,000-24,100,000) for users to quickly test CAESAR.
+
+(Interpolated) HiC in this region:
+
+![GitHub Logo](/Model/example_outputs/chr2_23850000_hic.png)
+
+
+### ii. example_region_from_model.py
+In this step, the extracted data are fed into the model to generate predicted contact maps.
+The outputs are visualized in ``/Model/example_outputs/``.
+
+
+## Train CAESAR from scratch
 ### Processing data
 Before training, we need to prepare 1) Hi-C contact maps, 2) Micro-C contact maps, and 3) epigenomic features.
 
@@ -67,26 +88,6 @@ We recommend using GPU to train the model, and it takes about 10 hours.
 In ``/Script/c_attribution/``, we provide the code for attribution an arbitrary region toward the input epigenomic features.
 With provided coordinates and trained model, the users can calculate the attribution
 from each locus of each epigenomic feature.
-
-
-## Applying CAESAR model
-In ``/Model/``, we provide some examples of quickly applying the trained model to impute the region
-that you are interested in.
-
-### i. strata_to_example_regions.py
-In this step, we extract a 250-kb region from the data processed in previous steps.
-
-Since the processed data is too large to upload to GitHub, we provide an extracted example region
-in ``/Model/example_inputs/`` (chr2:23,850,000-24,100,000) for users to quickly test CAESAR.
-
-(Interpolated) HiC in this region:
-
-![GitHub Logo](/Model/example_outputs/chr2_23850000_hic.png)
-
-
-### ii. example_region_from_model.py
-In this step, the extracted data are fed into the model to generate predicted contact maps.
-The outputs are visualized in ``/Model/example_outputs/``.
 
 
 The predicted region chr2:23,850,000-24,100,000:
