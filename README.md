@@ -130,7 +130,7 @@ The results are stored in /temp/example_outputs/ as .png files:
 
 (Interpolated) Input HiC in this region:
 
-![GitHub Logo](/Imputation/temp/example_outputs/chr2_23850000_hic.png)
+![GitHub Logo](/Imputation/temp/example_outputs/chr2_23850000_input.png)
 
 The predicted region chr2:23,850,000-24,100,000:
 

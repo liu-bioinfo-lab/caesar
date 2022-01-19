@@ -320,9 +320,10 @@ def stripe_caller_all(
         threshold=0.01,
         max_range=150000, resolution=1000,
         min_length=30000, closeness=50000,
-        stripe_width=1, merge=1, window_size=8
+        stripe_width=1, merge=1, window_size=8,
+        reference_genome='hg38'
 ):
-    ch_sizes = load_chrom_sizes('hg38')
+    ch_sizes = load_chrom_sizes(reference_genome)
 
     f = open(output_file, 'w')
     f.write('#chr1\tx1\tx2\tchr2\ty1\ty2\tenrichment\n')

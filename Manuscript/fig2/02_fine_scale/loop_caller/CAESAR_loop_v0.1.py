@@ -26,9 +26,6 @@ def call_loops(folder, output):
     max_distance = 200000
     resolution = 1000
     smooth_window = 1
-    min_diag_prom = 2
-    min_hv_prom = 2
-    min_distance = 15
     window_size = 10
     peak_size = 2
     q_threshold = 0.1
