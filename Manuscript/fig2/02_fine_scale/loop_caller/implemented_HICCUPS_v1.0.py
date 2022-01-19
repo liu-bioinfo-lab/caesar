@@ -56,8 +56,8 @@ def call_loops(folder, output):
     mat_v = load_vertical_mat(strata)
 
     f = open(output, 'w')
-    # for i in range(window_size + peak_size + 1, max_distance // resolution - window_size - peak_size - 1):
-    for i in [12, 25, 50, 75, 100, 150]:
+    for i in range(window_size + peak_size + 1, max_distance // resolution - window_size - peak_size - 1):
+    # for i in [12, 25, 50, 75, 100, 150]:
         print('Stratum:', i, end=' ')
         stratum = strata[i]
 
@@ -137,32 +137,13 @@ def call_loops(folder, output):
         # plt.show()
         # np.save(f'example_p_{i}.npy', np.array(p_values))
     f.close()
-    # loops.sort()
-    # f = open(output, 'w')
-    # f.write('#chr1\tx1\tx2\tchr2\ty1\ty2\tname\tscore\tstrand1\tstrand2\tcolor\n')
-    # for i, (p1, p2, v1, v2, v3) in enumerate(loops):
-    #     duplicate = False
-    #     if i > 0:
-    #         for j in range(i - 1, -1, -1):
-    #             pp1, pp2 = loops[j][0], loops[j][1]
-    #             if pp1 < p1 - 2:
-    #                 break
-    #             if abs(p1 - pp1) + abs(p2 - pp2) <= 5:
-    #                 duplicate = True
-    #                 break
-    #     if not duplicate:
-    #         # f.write(f'{p1 * 1000}\t{p2 * 1000}\t{v1}\t{v2}\t{v3}\n')
-    #         f.write(f'{ch}\t{p1*1000}\t{p1*1000 +1000}\t{ch}\t{p2*1000}\t{p2*1000+1000}\t.\t.\t.\t.\t0,255,255\n')
-    # f.close()
 
 
 if __name__ == '__main__':
     micro_loops = '../../../11_figures/14_call_loops/chr2_micro'
     pred_loops = '../../../11_figures/14_call_loops/chr2_pred'
+
     call_loops(folder=micro_loops, output='HFF_micro_chr2.txt')
     call_loops(folder=pred_loops, output='HFF_pred_chr2.txt')
-
-    # call_loops(folder='../biorep1_strata', output='biorep1_chr2_noSm.txt')
-    # call_loops(folder='../biorep23_strata', output='biorep23_chr2_noSm.txt')
 
 

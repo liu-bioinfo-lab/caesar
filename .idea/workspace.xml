@@ -2,154 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/01_generate_example_input_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/01_generate_example_input_regions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/02_example_region_from_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/02_example_region_from_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CAESAR_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/CAESAR_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/HFF_contact_profile.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/HFF_contact_profile.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/HFF_loop.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/HFF_loop.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/_01_generate_example_input_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/_01_generate_example_input_regions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/_02_example_region_from_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/_02_example_region_from_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_inputs/chr2_23850000_epi.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_inputs/chr2_23850000_epi.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_inputs/chr2_23850000_hic.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_inputs/chr2_23850000_hic.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_inputs/chr2_23850000_mask.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_inputs/chr2_23850000_mask.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_inputs/chr2_23850000_micro.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_inputs/chr2_23850000_micro.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_inputs/chr2_23850000_pos_enc.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_inputs/chr2_23850000_pos_enc.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_hic.png" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_hic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_micro.png" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_micro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/previous_example/example_outputs/chr2_23850000_pred.png" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_pred.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/surrogate_to_HFF_contact_profile.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/surrogate_contact_profile.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/surrogate_to_HFF_loop.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/surrogate_loop.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/utils/epi_norm_factors_DNase.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/utils/epi_norm_factors_DNase.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/utils/hg38.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/utils/hg38.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/utils/hic_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Imputation/utils/hic_depth.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manuscript/loop_caller/hiccups.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manuscript/loop_caller/implemented_HICCUPS_v1.0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manuscript/stripe_caller/Quagga_caller_v1.0.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Training/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/ATAC_seq_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/ATAC_seq_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/CTCF_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/CTCF_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/H3K27ac_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/H3K27ac_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/H3K27me3_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/H3K27me3_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/H3K4me1_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/H3K4me1_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/H3K4me3_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/H3K4me3_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats/epi_norm_factors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/epi_norm_factors.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/A549_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/A549_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/A673_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/A673_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/B_cell_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/B_cell_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/CD14-positive_monocyte_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/CD14-positive_monocyte_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/GM12878_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/GM12878_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/GM23338_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/GM23338_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/HCT116_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/HCT116_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/HeLa-S3_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/HeLa-S3_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/HepG2_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/HepG2_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/IMR90_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/IMR90_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/K562_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/K562_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/Karpas-422_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/Karpas-422_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/MCF-7_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/MCF-7_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/MM1S_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/MM1S_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/OCI-LY7_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/OCI-LY7_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/PC-3_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/PC-3_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/PC-9_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/PC-9_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/SK-N-SH_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/SK-N-SH_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/adrenal_gland_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/adrenal_gland_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/astrocyte_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/astrocyte_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/bipolar_neuron_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/bipolar_neuron_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/body_of_pancreas_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/body_of_pancreas_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/breast_epithelium_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/breast_epithelium_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/breast_epithelium_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/breast_epithelium_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/cardiac_muscle_cell_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/cardiac_muscle_cell_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/endothelial_cell_of_umbilical_vein_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/endothelial_cell_of_umbilical_vein_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/epi_norm_factors_all.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/epi_norm_factors_all.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/esophagus_muscularis_mucosa_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/esophagus_muscularis_mucosa_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/esophagus_muscularis_mucosa_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/esophagus_muscularis_mucosa_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/esophagus_squamous_epithelium_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/fibroblast_of_dermis_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/fibroblast_of_dermis_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/fibroblast_of_lung_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/fibroblast_of_lung_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/foreskin_fibroblast_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/foreskin_fibroblast_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/foreskin_keratinocyte_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/foreskin_keratinocyte_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/gastrocnemius_medialis_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/gastroesophageal_sphincter_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/gastroesophageal_sphincter_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/heart_left_ventricle_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/heart_left_ventricle_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/heart_left_ventricle_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/heart_left_ventricle_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/hepatocyte_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/hepatocyte_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/keratinocyte_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/keratinocyte_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/lung_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/lung_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/mammary_epithelial_cell_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/mammary_epithelial_cell_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/myotube_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/myotube_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/neural_progenitor_cell_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/neural_progenitor_cell_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/osteoblast_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/osteoblast_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/ovary_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/ovary_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/pancreas_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/pancreas_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/peyer_s_patch_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/prostate_gland_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/prostate_gland_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/right_atrium_auricular_region_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/right_atrium_auricular_region_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/right_atrium_auricular_region_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/right_atrium_auricular_region_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/ris_mucosa_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/ris_mucosa_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/sigmoid_colon_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/sigmoid_colon_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/sigmoid_colon_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/sigmoid_colon_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/skeletal_muscle_myoblast_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/skeletal_muscle_myoblast_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/smooth_muscle_cell_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/smooth_muscle_cell_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/spleen_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/spleen_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/spleen_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/spleen_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/spleen_f54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/spleen_f54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/stomach_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/stomach_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/stomach_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/stomach_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/stomach_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/stomach_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/suprapubic_skin_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/suprapubic_skin_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/testis_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/testis_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/thoracic_aorta_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/thoracic_aorta_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/thyroid_gland_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/tibial_artery_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/tibial_artery_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/tibial_nerve_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/transverse_colon_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/transverse_colon_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/transverse_colon_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/transverse_colon_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/transverse_colon_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/transverse_colon_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_f51_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_f51_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_m37_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_m37_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_m54_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/upper_lobe_of_left_lung_m54_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_epi_stats_all_tissues/uterus_f53_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_epi_stats_all_tissues/uterus_f53_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/01_process_epi_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/01_process_epi_features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/02_micro_stats/micro_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/02_micro_stats/micro_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/02_process_MicroC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/02_process_MicroC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/03_hic_stats/hic_depth.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/03_hic_stats/hic_depth.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/03_process_HiC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/03_process_HiC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/hg38.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/hg38.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/a_data_processing/mm10.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/a_data_processing/mm10.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/CAESAR_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/CAESAR_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/data_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/hg38.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/hg38.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/micro_loops/HFF_micro_loops_all_1kb/merged_loops.bedpe" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/micro_loops/HFF_micro_loops_all_1kb/merged_loops.bedpe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/micro_loops/HFF_micro_loops_all_5kb/merged_loops.bedpe" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/micro_loops/HFF_micro_loops_all_5kb/merged_loops.bedpe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/micro_loops/hESC_micro_loops_all_1kb/merged_loops.bedpe" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/micro_loops/hESC_micro_loops_all_1kb/merged_loops.bedpe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/micro_loops/hESC_micro_loops_all_5kb/merged_loops.bedpe" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/micro_loops/hESC_micro_loops_all_5kb/merged_loops.bedpe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/01_loop/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/01_loop/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/CAESAR_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/02_contact_profile/CAESAR_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/02_contact_profile/data_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/hg38.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/02_contact_profile/hg38.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/b_model_training/02_contact_profile/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/b_model_training/02_contact_profile/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/HiC_exps.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/HiC_exps.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/attribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/attribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/hg38.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/hg38.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/mm10.chrom.sizes" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/mm10.chrom.sizes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script/c_attribution/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/c_attribution/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/loop_caller/hiccups.py" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/loop_caller/hiccups.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/loop_caller/implemented_HICCUPS_v1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/loop_caller/implemented_HICCUPS_v1.0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/stripe_caller/Quagga_caller_v1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/stripe_caller/Quagga_caller_v1.0.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,32 +19,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="325">
-                <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Training/a_data_processing/01_process_epi_features.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Training/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="192">
-                <caret line="143" column="9" lean-forward="true" selection-start-line="143" selection-end-line="143" selection-end-column="9" />
+              <first_editor relative-caret-position="442">
+                <caret line="205" selection-start-line="205" selection-end-line="205" />
               </first_editor>
               <second_editor />
             </state>
@@ -196,19 +28,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Imputation/03_visualize_results.py">
+        <entry file="file://$PROJECT_DIR$/Manuscript/fig2/01_SCC/evaluate_SCC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
-              <caret line="166" column="14" selection-start-line="166" selection-start-column="14" selection-end-line="166" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Imputation/01_generate_example_input_regions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1306">
-              <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="24" />
+            <state relative-caret-position="167">
+              <caret line="335" column="30" selection-start-line="335" selection-start-column="30" selection-end-line="335" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -217,10 +40,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Imputation/02_example_region_from_model.py">
+        <entry file="file://$PROJECT_DIR$/Manuscript/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="325">
+                <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="155" column="24" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="24" />
+            <state relative-caret-position="344">
+              <caret line="392" column="7" selection-start-line="392" selection-start-column="7" selection-end-line="392" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/implemented_HICCUPS_v1.0.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="146" column="61" selection-start-line="146" selection-start-column="61" selection-end-line="146" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-131">
+              <caret line="343" column="63" selection-start-line="343" selection-start-column="63" selection-end-line="343" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="135" column="35" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -248,11 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/code/a_data_processing/split_MicroC.py" />
-        <option value="$PROJECT_DIR$/code/a_data_processing/split_HiC.py" />
-        <option value="$PROJECT_DIR$/code/a_data_processing/split_epi_features.py" />
-        <option value="$PROJECT_DIR$/utils/stripe_caller.py" />
-        <option value="$PROJECT_DIR$/Model/layers.py" />
         <option value="$PROJECT_DIR$/Model/model_util.py" />
         <option value="$PROJECT_DIR$/Model/load_surrogate_exp.py" />
         <option value="$PROJECT_DIR$/Model/example_regions.py" />
@@ -299,6 +165,11 @@
         <option value="$PROJECT_DIR$/Imputation/03_visualize_results.py" />
         <option value="$PROJECT_DIR$/Imputation/02_example_region_from_model.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Manuscript/fig2/01_SCC/evaluate_SCC.py" />
+        <option value="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/stripe_caller_improved.py" />
+        <option value="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py" />
+        <option value="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/implemented_HICCUPS_v1.0.py" />
+        <option value="$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py" />
       </list>
     </option>
   </component>
@@ -332,13 +203,7 @@
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Training" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Training" type="462c0819:PsiDirectoryNode" />
-              <item name="a_data_processing" type="462c0819:PsiDirectoryNode" />
+              <item name="Manuscript" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -405,7 +270,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20356907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -427,51 +291,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Utils/Fine-scale/quagga_stripe_caller.py" />
-    <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_raw_data.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/Fine-scale/fast_call_loops.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/Fine-scale/HFF_loops_test_set.txt" />
-    <entry file="file://$PROJECT_DIR$/Model/impute_regions_with_processed_data.py" />
-    <entry file="file://$PROJECT_DIR$/Model/model_util.py" />
-    <entry file="file://$PROJECT_DIR$/Utils/Fine-scale/HFF_stripes_test_set.txt" />
-    <entry file="file://$PROJECT_DIR$/Training/c_attribution/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6358">
-          <caret line="298" selection-start-line="298" selection-end-line="298" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Training/c_attribution/attribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#25#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Script/b_model_training/loops/utils2.py" />
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="352">
-            <caret line="16" selection-start-line="16" selection-end-line="16" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Training/a_data_processing/hg38.chrom.sizes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Training/a_data_processing/01_epi_stats/epi_norm_factors.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -633,16 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Training/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="192">
-            <caret line="143" column="9" lean-forward="true" selection-start-line="143" selection-end-line="143" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Imputation/02_example_region_from_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -653,22 +462,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/Training/a_data_processing/01_process_epi_features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="166" column="32" selection-start-line="166" selection-start-column="32" selection-end-line="166" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="325">
-            <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <first_editor relative-caret-position="1050">
+            <caret line="42" selection-start-line="42" selection-end-line="42" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Training/a_data_processing/01_process_epi_features.py">
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/data_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+        <state relative-caret-position="-5467">
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/CAESAR_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4681">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/get_strata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8281">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/evaluate_SCC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8875">
+          <caret line="361" column="88" lean-forward="true" selection-start-line="361" selection-start-column="88" selection-end-line="361" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/03_get_region_from_model/1c.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="442">
+            <caret line="205" selection-start-line="205" selection-end-line="205" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig2/01_SCC/evaluate_SCC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="335" column="30" selection-start-line="335" selection-start-column="30" selection-end-line="335" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="325">
+            <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="392" column="7" selection-start-line="392" selection-start-column="7" selection-end-line="392" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/hiccups.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18881" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="135" column="35" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/implemented_HICCUPS_v1.0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="146" column="61" selection-start-line="146" selection-start-column="61" selection-end-line="146" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-131">
+          <caret line="343" column="63" selection-start-line="343" selection-start-column="63" selection-end-line="343" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
