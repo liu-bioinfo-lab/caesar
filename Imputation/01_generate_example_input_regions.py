@@ -40,7 +40,7 @@ def hictxt2strata(cell_lines, chroms, out_dir, max_distance=250000, rg='hg38'):
 
     resolution = 1000
     n_strata = max_distance // resolution
-    depth = pd.read_csv(f'{my_path}/utils/depth.csv', sep='\t', index_col=0)
+    depth = pd.read_csv(f'{my_path}/utils/hic_depth.csv', sep='\t', index_col=0)
     avg_depth = depth.sum(axis=1) / 5  # always use the average
 
     for ch in chroms:
@@ -57,7 +57,7 @@ def hictxt2strata(cell_lines, chroms, out_dir, max_distance=250000, rg='hg38'):
 
             count = 0
             for line in open(f):
-                if count % 3000000 == 0:
+                if count % 10000000 == 0:
                     print(' Counting: Line: {0}'.format(count))
                 count += 1
                 lst = line.strip().split()
@@ -89,6 +89,8 @@ def load_bigWig_for_entire_genome(path, name, chroms, rg='hg38', resolution=200,
     chromosome_sizes = load_chrom_sizes(rg)
 
     for ch in chroms:
+        if not os.path.exists(f'{epi_path}/{ch}/'):
+            os.mkdir(f'{epi_path}/{ch}/')
         end_pos = chromosome_sizes[ch]
         nBins = end_pos // resolution
         end_pos = nBins * resolution  # remove the 'tail'
@@ -101,6 +103,7 @@ def load_bigWig_for_entire_genome(path, name, chroms, rg='hg38', resolution=200,
 
 
 def load_bedGraph_for_entire_genome(path, name, chroms, rg='hg38', resolution=200, epi_path=''):
+    print(' Loading:', path)
     chromosome_sizes = load_chrom_sizes(rg)
     epi_signal = {ch: np.zeros((chromosome_sizes[ch] // resolution, )) for ch in chroms}
 
@@ -133,11 +136,11 @@ def load_bedGraph_for_entire_genome(path, name, chroms, rg='hg38', resolution=20
 def epigenomic2array(input_folder, epi_names, chroms, ouput_folder):
     for epi_name in epi_names:
         print(' ', epi_name)
-        input_path = f'{input_folder}/{impute_cell_name}_{epi_name}_hg38.'
-        if os.path.exists(f'{input_path}.bigWig'):
-            load_bigWig_for_entire_genome(f'{input_path}.bigWig', epi_name, chroms, epi_path=ouput_folder)
-        elif os.path.exists(f'{input_path}.bedGraph'):
+        input_path = f'{input_folder}/{impute_cell_name}_{epi_name}_hg38'
+        if os.path.exists(f'{input_path}.bedGraph'):
             load_bedGraph_for_entire_genome(f'{input_path}.bedGraph', epi_name, chroms, epi_path=ouput_folder)
+        elif os.path.exists(f'{input_path}.bigWig'):
+            load_bigWig_for_entire_genome(f'{input_path}.bigWig', epi_name, chroms, epi_path=ouput_folder)
         else:
             raise ValueError(f'{input_path}.bigWig OR {input_path}.bedGraph DOES NOT EXIST!')
 
@@ -167,8 +170,8 @@ if __name__ == '__main__':
     # epigenomic feature path (bigwig or bedgraph)
     # The format must be {bigwig_path}/{impute_cell_name}_{epi_name}_hg38.{bigWig/BedGraph}
     # e.g., {bigwig_path}/HFF_CTCF_hg38.bigWig
-    bigwig_path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data/Epi/HFF'
-    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
+    bigwig_path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed'
+    epi_names = ['DNase_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
 
     # The regions you need to impute (must >= 250Kb)
     ch_coord = {'chr2': (23850000, 24100000)}

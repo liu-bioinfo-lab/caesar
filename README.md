@@ -26,11 +26,11 @@ that you are interested in.
 
 ### i. 01_generate_example_input_regions.py
 Before this step, users need to get Hi-C files and epigenomic features ready.
-The example data can be downloaded at XXXX.
+The example data can be downloaded at DropBox (link: ).
 
 This .py file generate numpy matrices from Hi-C contact maps and epigenomic features for the next steps.
 
-The parameters users need to specify:
+The parameters users need to specify (from Line 152 of this file):
 - impute_cell_name: the cell to impute (must match the file name of bigWig/bedGraph files)
 - processed_hic_path: the folders containing input Hi-C in .txt format (generated with JuiceTools dump). File names must be chr{?}_1kb.txt.
 - bigwig_path: the folder containing all bigWig/bedGraph files. File names must be {cell_name}_{epi_name}_hg38.bigWig/bedGraph.
@@ -39,31 +39,106 @@ The parameters users need to specify:
 - HiC_cell_lines: The Hi-C contact maps to use
 - temp_folder: temp folder for storage
 
+
+```
+>>> python 01_generate_example_input_regions.py
+...
+Step 1: Load HiC data and store into strata
+chr2 HFF
+ Counting: Line: 0
+ Counting: Line: 10000000
+ Counting: Line: 20000000
+ Counting: Line: 30000000
+ Counting: Line: 40000000
+ Counting: Line: 50000000
+ Counting: Line: 60000000
+ Counting: Line: 70000000
+ Counting: Line: 80000000
+ Counting: Line: 90000000
+ Counting: Line: 100000000
+Step 2: Load epigenomic data and store into arrays
+  DNase_seq
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_DNase_seq_hg38.bedGraph
+  CTCF
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_CTCF_hg38.bedGraph
+  H3K4me1
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K4me1_hg38.bedGraph
+  H3K4me3
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K4me3_hg38.bedGraph
+  H3K27ac
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K27ac_hg38.bedGraph
+  H3K27me3
+ Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K27me3_hg38.bedGraph
+```
+
 ### ii. 02_example_region_from_model.py
 This .py file generate 250 Kb regions (Hi-C and epi) from the temp outputs of the last step 
 and the use CAESAR model to impute 200-bp-resolution Micro-C contact maps.
+If the given region is longer than 250 Kb, it will impute multiple contact maps
+with a 50 Kb step length.
 
-The parameters (except model paths) have to be consistent with 01_generate_example_input_regions.py.
+The parameters users need to specify (from Line 211 of this file):
+- surrogate: whether the input Hi-C is a surrogate Hi-C.
+If not, it will use the model trained with a matched Hi-C (HFF in this example)
+
+The other parameters have to be consistent with 01_generate_example_input_regions.py.
+
+```
+>>> python 02_example_region_from_model.py
+...
+Finish generating positional encoding... 0.0min:0.0037298202514648438sec
+ Loading epigenomics... chr2 DNase_seq 1210967
+ Loading epigenomics... chr2 CTCF 1210967
+ Loading epigenomics... chr2 H3K4me1 1210967
+ Loading epigenomics... chr2 H3K4me3 1210967
+ Loading epigenomics... chr2 H3K27ac 1210967
+ Loading epigenomics... chr2 H3K27me3 1210967
+Finish generating epigenomic features... 0.0min:0.38011598587036133sec
+ Loading HiC strata: chr2 23850000 24100000
+  0 / 250
+  25 / 250
+  50 / 250
+  75 / 250
+  100 / 250
+  125 / 250
+  150 / 250
+  175 / 250
+  200 / 250
+  225 / 250
+Finish loading HiC strata... 0.0min:0.41601085662841797sec
+ Converting to matrices: chr2
+Finish processing 1 HiC maps... 0.0min:0.12031936645507812sec
+Start running:
+Epoch: 1  Batch: 1
+chr2_23850000
+```
 
 
 ### iii. 03_visualize_results.py
+This .py file visualize all predicted contact maps.
 
+The parameters users need to specify (from Line 137 of this file):
+All parameters have to be consistent with 01_generate_example_input_regions.py.
 
+```
+>>> python 03_visualize_results.py
+...
+chr2 23850000
+```
 
-Since the processed data is too large to upload to GitHub, we provide an extracted example region
-in ``/Model/example_inputs/`` (chr2:23,850,000-24,100,000) for users to quickly test CAESAR.
+The results are stored in /temp/example_outputs/ as .png files:
 
-(Interpolated) HiC in this region:
+(Interpolated) Input HiC in this region:
 
-![GitHub Logo](/Model/example_outputs/chr2_23850000_hic.png)
+![GitHub Logo](/Imputation/temp/example_outputs/chr2_23850000_hic.png)
 
 The predicted region chr2:23,850,000-24,100,000:
 
-![GitHub Logo](/Model/example_outputs/chr2_23850000_pred.png)
+![GitHub Logo](/Imputation/temp/example_outputs/chr2_23850000_pred.png)
 
 Comparing with the ground truth - real Micro-C contact map:
 
-![GitHub Logo](/Model/example_outputs/chr2_23850000_micro.png)
+![GitHub Logo](/Imputation/temp/example_outputs/chr2_23850000_micro.png)
 
 
 ### ii. example_region_from_model.py

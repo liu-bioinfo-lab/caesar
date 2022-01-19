@@ -51,7 +51,7 @@ def load_epigenetic_data(cell_lines, chromosomes, epi_names, processed_path, ver
     return epigenetic_data
 
 
-def strata2matrices(strata, ch_coord, resolution, gap=125000, size=250000, interp=False, thre=6, smooth=False):
+def strata2matrices(strata, ch_coord, resolution, gap=50000, size=250000, interp=False, thre=6, smooth=False):
     matrices = {}
     id_size = size // resolution
     for ch in ch_coord:
@@ -114,7 +114,7 @@ def training_data_generator(ch_coord, hic_cell_lines, micro_cell_line, epi_names
     print('Finish generating positional encoding...', '{}min:{}sec'.format(t_min, t_sec))
 
     # load epigenomic data
-    epi_features = load_epigenetic_data([micro_cell_line], ch_coord.keys(), epi_names, processed_path)
+    epi_features = load_epigenetic_data([micro_cell_line], ch_coord.keys(), epi_names, f'{processed_path}/input_epi_{micro_cell_line}')
     (t_min, t_sec) = divmod(time() - _tm, 60)
     _tm = time()
     print('Finish generating epigenomic features...', '{}min:{}sec'.format(t_min, t_sec))
@@ -153,16 +153,16 @@ def training_data_generator(ch_coord, hic_cell_lines, micro_cell_line, epi_names
     # print(idx)
     _tm = time()
 
-    print('Start training:')
+    print('Start running:')
     for _epoch in range(n_epoches):
-        print('Epoch:', _epoch)
+        # print('Epoch:', _epoch)
         for _batch in range(len(idx) // batch_size):
             if _epoch != 0 or _batch != 0:
                 (t_min, t_sec) = divmod(time() - _tm, 60)
                 print('{}min:{}sec'.format(t_min, t_sec))
             _tm = time()
 
-            print(' Batch:', _batch)
+            # print(' Batch:', _batch)
             batch_idx = idx[_batch * batch_size: (_batch + 1) * batch_size]
             kys = [all_keys[__] for __ in batch_idx]
 
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     impute_cell_name = 'HFF'
 
     # epigenomics names
-    epi_names = ['ATAC_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
+    epi_names = ['DNase_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
 
     # The regions you need to impute (must >= 250Kb)
     ch_coord = {'chr2': (23850000, 24100000)}
@@ -208,11 +208,21 @@ if __name__ == '__main__':
     #  The below lines are all you need to set
     #######################################################################################
 
+    # If the input Hi-C is a surrogate Hi-C
+    # if not, it will use the model trained with a matched Hi-C (Here, HFF)
+    surrogate = False
+
     # models to use
-    model = CAESAR()
-    model.load_weights(f'HFF_contact_profile.h5')
-    model_loop = CAESAR_loop()
-    model_loop.load_weights('HFF_loop.h5')
+    if surrogate:
+        model = CAESAR()
+        model.load_weights(f'{my_path}/surrogate_contact_profile.h5')
+        model_loop = CAESAR_loop()
+        model_loop.load_weights(f'{my_path}/surrogate_loop.h5')
+    else:
+        model = CAESAR()
+        model.load_weights(f'{my_path}/HFF_contact_profile.h5')
+        model_loop = CAESAR_loop()
+        model_loop.load_weights(f'{my_path}/HFF_loop.h5')
 
     #######################################################################################
     #  The above lines are all you need to set
@@ -230,12 +240,12 @@ if __name__ == '__main__':
         ky = kys[0]
         print(ky)
 
-        np.save(f'{temp_folder}/example_inputs/{ky}_hic.npy', hics)
-        np.save(f'{temp_folder}/example_inputs/{ky}_epi.npy', epis)
+        np.save(f'{temp_folder}/example_inputs/{ky}_hic.npy', hics[0])
+        np.save(f'{temp_folder}/example_inputs/{ky}_epi.npy', epis[0].T)
 
         _res1 = model.predict([hics, epis, pos_enc])[0, :, :]
         _res2 = model_loop.predict([hics, epis, pos_enc, mask])[0, :, :]
         _res = convolve2d(_res1 + _res2, np.ones((3, 3)) / 9, mode='same') * norm_mat
 
-        np.save(f'{temp_folder}/example_outputs/{ky}_epi.npy', _res)
+        np.save(f'{temp_folder}/example_outputs/{ky}_pred.npy', _res)
 
