@@ -26,7 +26,7 @@ that you are interested in.
 
 ### i. 01_generate_example_input_regions.py
 Before this step, users need to get Hi-C files and epigenomic features ready.
-The example data can be downloaded at DropBox (link: ).
+The example data can be downloaded at DropBox (link: https://www.dropbox.com/sh/wn39g1y4tinwy3z/AADDt7cIANS12izm-Md133LGa?dl=0).
 
 This .py file generate numpy matrices from Hi-C contact maps and epigenomic features for the next steps.
 
@@ -44,31 +44,14 @@ The parameters users need to specify (from Line 152 of this file):
 >>> python 01_generate_example_input_regions.py
 ...
 Step 1: Load HiC data and store into strata
-chr2 HFF
- Counting: Line: 0
- Counting: Line: 10000000
- Counting: Line: 20000000
- Counting: Line: 30000000
- Counting: Line: 40000000
- Counting: Line: 50000000
- Counting: Line: 60000000
- Counting: Line: 70000000
- Counting: Line: 80000000
- Counting: Line: 90000000
- Counting: Line: 100000000
+  chr2 HFF
 Step 2: Load epigenomic data and store into arrays
   DNase_seq
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_DNase_seq_hg38.bedGraph
   CTCF
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_CTCF_hg38.bedGraph
   H3K4me1
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K4me1_hg38.bedGraph
   H3K4me3
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K4me3_hg38.bedGraph
   H3K27ac
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K27ac_hg38.bedGraph
   H3K27me3
- Loading: /nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed/HFF_H3K27me3_hg38.bedGraph
 ```
 
 ### ii. 02_example_region_from_model.py
@@ -87,24 +70,8 @@ The other parameters have to be consistent with 01_generate_example_input_region
 >>> python 02_example_region_from_model.py
 ...
 Finish generating positional encoding... 0.0min:0.0037298202514648438sec
- Loading epigenomics... chr2 DNase_seq 1210967
- Loading epigenomics... chr2 CTCF 1210967
- Loading epigenomics... chr2 H3K4me1 1210967
- Loading epigenomics... chr2 H3K4me3 1210967
- Loading epigenomics... chr2 H3K27ac 1210967
- Loading epigenomics... chr2 H3K27me3 1210967
 Finish generating epigenomic features... 0.0min:0.38011598587036133sec
  Loading HiC strata: chr2 23850000 24100000
-  0 / 250
-  25 / 250
-  50 / 250
-  75 / 250
-  100 / 250
-  125 / 250
-  150 / 250
-  175 / 250
-  200 / 250
-  225 / 250
 Finish loading HiC strata... 0.0min:0.41601085662841797sec
  Converting to matrices: chr2
 Finish processing 1 HiC maps... 0.0min:0.12031936645507812sec

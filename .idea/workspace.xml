@@ -3,28 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5be819f2-73db-4130-97f0-06c808047be6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/CAESAR_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/data_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/evaluate_SCC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/CAESAR_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/data_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/get_strata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/task.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/02_get_region_from_predicted_strata/1b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/02_get_region_from_predicted_strata/1b_example_region_from_strata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/03_get_region_from_model/1c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig1/03_get_region_from_model/example_region_from_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/implemented_HICCUPS_v1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/CAESAR_loop_v0.1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/5a1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/5a2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/CAESAR_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/HFF_cut.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/HFF_micro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/HFF_region.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manuscript/fig5/example_region_from_model.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,12 +13,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="3142">
-                <caret line="133" selection-start-line="133" selection-end-line="133" />
+              <first_editor relative-caret-position="1325">
+                <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
               </first_editor>
               <second_editor />
             </state>
@@ -59,12 +37,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Manuscript/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="400">
-                <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+              <first_editor relative-caret-position="117">
+                <caret line="65" selection-start-line="65" selection-end-line="65" />
               </first_editor>
               <second_editor />
             </state>
@@ -74,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="343" column="77" lean-forward="true" selection-start-line="343" selection-start-column="77" selection-end-line="343" selection-end-column="77" />
+            <state relative-caret-position="8350">
+              <caret line="343" column="77" selection-start-line="343" selection-start-column="77" selection-end-line="343" selection-end-column="77" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -86,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/CAESAR_loop_v0.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="600">
               <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -162,14 +140,14 @@
         <option value="$PROJECT_DIR$/Training/README.md" />
         <option value="$PROJECT_DIR$/Manuscript/fig5/cross_tissue/visualize.py" />
         <option value="$PROJECT_DIR$/Manuscript/fig5/cross_tissue/eQTLs_2.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/stripe_caller/Quagga_V0.2.py" />
         <option value="$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/CAESAR_loop_v0.1.py" />
         <option value="$PROJECT_DIR$/Manuscript/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -183,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,18 +181,13 @@
             <path>
               <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
               <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Manuscript" type="462c0819:PsiDirectoryNode" />
-              <item name="fig4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CAESAR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CAESAR" type="462c0819:PsiDirectoryNode" />
               <item name="Training" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,8 +248,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20356907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -337,13 +308,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/loop_caller/hiccups.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/loop_caller/hiccups.py" />
     <entry file="file://$PROJECT_DIR$/Model/example_outputs/chr2_23850000_pred.png" />
     <entry file="file://$PROJECT_DIR$/Training/b_model_training/01_loop/data_utils.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -362,9 +327,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_micro.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_micro.png" />
     <entry file="file://$PROJECT_DIR$/Imputation/_01_generate_example_input_regions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -375,16 +338,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/loop_caller/implemented_HICCUPS_v1.0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/loop_caller/implemented_HICCUPS_v1.0.py" />
     <entry file="file://$PROJECT_DIR$/Image/CAESAR.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -414,12 +368,8 @@
     <entry file="file://$PROJECT_DIR$/Imputation/temp/example_outputs/chr2_23850000_input.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_hic.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_pred.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_hic.png" />
+    <entry file="file://$PROJECT_DIR$/Imputation/previous_example/example_outputs/chr2_23850000_pred.png" />
     <entry file="file://$PROJECT_DIR$/Imputation/temp/example_outputs/chr2_23850000_pred.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -460,55 +410,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/data_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5467">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/CAESAR_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4681">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/get_strata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8281">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/evaluate_SCC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8875">
-          <caret line="361" column="88" lean-forward="true" selection-start-line="361" selection-start-column="88" selection-end-line="361" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/03_get_region_from_model/1c.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/data_utils.py" />
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/CAESAR_model.py" />
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/loop/get_strata.py" />
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/task.py" />
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/01_train_and_save_results/contact_profile/evaluate_SCC.py" />
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig1/03_get_region_from_model/1c.png" />
     <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/hiccups.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18881" />
@@ -524,16 +431,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Training/c_attribution/attribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <element signature="e#25#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Training/c_attribution/attribution.py" />
     <entry file="file://$PROJECT_DIR$/Manuscript/fig6/attribution.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -566,26 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="3142">
-            <caret line="133" selection-start-line="133" selection-end-line="133" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Training/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="50">
-            <caret line="2" column="39" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="39" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manuscript/fig2/01_SCC/evaluate_SCC.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -606,9 +484,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Training/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="50">
+            <caret line="2" column="39" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8350">
+          <caret line="343" column="77" selection-start-line="343" selection-start-column="77" selection-end-line="343" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Manuscript/fig2/02_fine_scale/loop_caller/CAESAR_loop_v0.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="600">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -616,21 +514,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manuscript/fig4/example_region_from_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="343" column="77" lean-forward="true" selection-start-line="343" selection-start-column="77" selection-end-line="343" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manuscript/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="400">
-            <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+          <first_editor relative-caret-position="117">
+            <caret line="65" selection-start-line="65" selection-end-line="65" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1325">
+            <caret line="71" column="72" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
           </first_editor>
           <second_editor />
         </state>
