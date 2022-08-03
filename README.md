@@ -29,6 +29,7 @@ that you are interested in.
 ### i. 01_generate_example_input_regions.py
 Before this step, users need to get Hi-C files and epigenomic features ready.
 The example data can be downloaded at DropBox (link: https://www.dropbox.com/sh/wn39g1y4tinwy3z/AADDt7cIANS12izm-Md133LGa?dl=0).
+Another backup link is: https://www.dropbox.com/sh/wf91igatogz2fte/AACyIPKDU4deTBJMZY2hP-_na?dl=0
 
 This .py file generate numpy matrices from Hi-C contact maps and epigenomic features for the next steps.
 
