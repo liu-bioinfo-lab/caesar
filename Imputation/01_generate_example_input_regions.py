@@ -160,17 +160,17 @@ if __name__ == '__main__':
     # COMMAND: java -jar juicetools.jar dump observed NONE {hic_file} chr1 chr1 BP 1000 chr1_1kb.txt
     # e.g., chr1_1kb.txt, chr2_1kb.txt
     processed_hic_path = {
-        'hESC': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/H1-hESC/processed',
-        'IMR-90': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/IMR90/processed',
-        'GM12878': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/GM12878/processed',
-        'HFF': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/Dekker_HFF/processed',
-        'K562': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/K562/processed'
+        'hESC': '/data/bulkHiC/H1-hESC/processed',
+        'IMR-90': '/data/bulkHiC/IMR90/processed',
+        'GM12878': '/data/bulkHiC/GM12878/processed',
+        'HFF': '/data/bulkHiC/Dekker_HFF/processed',
+        'K562': '/data/bulkHiC/K562/processed'
     }
 
     # epigenomic feature path (bigwig or bedgraph)
     # The format must be {bigwig_path}/{impute_cell_name}_{epi_name}_hg38.{bigWig/BedGraph}
     # e.g., {bigwig_path}/HFF_CTCF_hg38.bigWig
-    bigwig_path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/cut_and_run/HFF/processed'
+    bigwig_path = '/data/cut_and_run/HFF/processed'
     epi_names = ['DNase_seq', 'CTCF', 'H3K4me1', 'H3K4me3', 'H3K27ac', 'H3K27me3']
 
     # The regions you need to impute (must >= 250Kb)
