@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 
 
 processed_hic_path = {
-    'hESC': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/H1-hESC/processed',
-    'IMR-90': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/IMR90/processed',
-    'GM12878': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/GM12878/processed',
-    'HFF': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/Dekker_HFF/processed',
-    'K562': '/nfs/turbo/umms-drjieliu/proj/4dn/data/bulkHiC/K562/processed'
+    'hESC': '/data/bulkHiC/H1-hESC/processed',
+    'IMR-90': '/data/bulkHiC/IMR90/processed',
+    'GM12878': '/data/bulkHiC/GM12878/processed',
+    'HFF': '/data/bulkHiC/Dekker_HFF/processed',
+    'K562': '/data/bulkHiC/K562/processed'
 }
-out_path = '/nfs/turbo/umms-drjieliu/proj/4dn/data/microC/high_res_map_project_training_data/HiC/'
+out_path = '/data/microC/high_res_map_project_training_data/HiC/'
 chromosomes = [f'chr{i}' for i in list(range(1, 23)) + ['X']]
 
 
